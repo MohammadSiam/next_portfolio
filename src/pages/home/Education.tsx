@@ -28,12 +28,16 @@ export default function Education() {
                       <li className="position-relative z-1 mb-3">
                         <div className="d-flex gap-2">
                           <p className="text-300 text-nowrap fw-regular mb-0">
-                            2020-2024:
+                            2018-2023:
                           </p>
                           <div>
-                            <span className="text-primary-2">MIT</span>
+                            <span className="text-primary-2">
+                              Hajee Mohammed Danesh Science And Technology
+                              University
+                            </span>
                             <p className="text-dark">
-                              Bachelor’s Degree in Computer Science
+                              Bachelor’s Degree in Electronics and Communication
+                              Engineering
                             </p>
                           </div>
                         </div>
@@ -41,15 +45,14 @@ export default function Education() {
                       <li className="position-relative z-1 mb-3">
                         <div className="d-flex gap-2">
                           <p className="text-300 text-nowrap fw-regular mb-0">
-                            2018-2019:
+                            2014-2016:
                           </p>
                           <div>
                             <span className="text-primary-2">
-                              Harvard University
+                              Milestone College
                             </span>
                             <p className="text-dark">
-                              Certification in React and Redux, Node.js
-                              Developer Course
+                              Higher Secondary Certificate
                             </p>
                           </div>
                         </div>
@@ -57,30 +60,14 @@ export default function Education() {
                       <li className="position-relative z-1 mb-3">
                         <div className="d-flex gap-2">
                           <p className="text-300 text-nowrap fw-regular mb-0">
-                            2015-2016:
+                            2009-2014:
                           </p>
                           <div>
                             <span className="text-primary-2">
-                              Stanford University
+                              Kasba Govt High School
                             </span>
                             <p className="text-dark">
-                              Certification in Full Stack Web Development
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="position-relative z-1 mb-3">
-                        <div className="d-flex gap-2">
-                          <p className="text-300 text-nowrap fw-regular mb-0">
-                            2013-2015:
-                          </p>
-                          <div>
-                            <span className="text-primary-2">
-                              University of Washington
-                            </span>
-                            <p className="text-dark">
-                              Certification in React and Redux, Node.js
-                              Developer Course
+                              Secondary School Certificate
                             </p>
                           </div>
                         </div>
@@ -115,11 +102,12 @@ export default function Education() {
                     <li className="position-relative z-1 mb-3">
                       <div className="d-flex gap-2">
                         <p className="text-300 text-nowrap fw-regular mb-0">
-                          2023-2024:
+                          2022-2023:
                         </p>
                         <div>
                           <span className="text-primary-2">
-                            Advanced Data Analytics with Big Data Tools
+                            Optimising Deep Learning Architectures for Insomnia
+                            Detection
                           </span>
                           <p className="text-dark">
                             Utilized big data tools for advanced analytics and
@@ -135,11 +123,12 @@ export default function Education() {
                         </p>
                         <div>
                           <span className="text-primary-2">
-                            Cloud-Native Application Architectures
+                            Investigate single-lead ECG length and scale for
+                            pre-screening Insomnia using deep learning
                           </span>
                           <p className="text-dark">
-                            Studied best practices for designing cloud-native
-                            applications.
+                            Sleep Stage Classification insomnia sleep disorder
+                            people
                           </p>
                         </div>
                       </div>
@@ -151,11 +140,11 @@ export default function Education() {
                         </p>
                         <div>
                           <span className="text-primary-2">
-                            AI-Driven User Experience Personalization
+                            Microsoft Malware Detection Using Classical Machine
+                            Learning Algorithm Comparison
                           </span>
                           <p className="text-dark">
-                            Leveraged AI to personalize user experiences based
-                            on behavior.
+                            Learning AI, Machine Learning and Deep Learning
                           </p>
                         </div>
                       </div>

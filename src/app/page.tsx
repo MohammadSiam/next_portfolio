@@ -1,7 +1,6 @@
 import HomeLayout from "@/components/layouts/HomeLayouts";
 import Blog from "@/pages/home/Blogs";
 import Contact from "@/pages/home/Contact";
-import Coporation from "@/pages/home/Corporation";
 import Education from "@/pages/home/Education";
 import Experience from "@/pages/home/Experience";
 import Hero from "@/pages/home/Hero";
@@ -16,7 +15,7 @@ export default function Home() {
       <HomeLayout>
         <Hero />
         <Statics />
-        <Coporation />
+        {/* <Coporation /> */}
         <Service />
         <Experience />
         <Education />

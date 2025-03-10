@@ -15,7 +15,6 @@ export default function Home() {
       <HomeLayout>
         <Hero />
         <Statics />
-        {/* <Coporation /> */}
         <Service />
         <Experience />
         <Education />

@@ -1,4 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
+import afbl from "../../../public/assets/imgs/experience/Akij-Food-and-Beverage-Ltd..png";
+import bluebay from "../../../public/assets/imgs/experience/bluebay_it_limited_logo.png";
+import bracnet from "../../../public/assets/imgs/experience/bracnet Ltd.png";
 
 export default function Experience() {
   return (
@@ -25,7 +29,7 @@ export default function Experience() {
                   </span>
                 </div>
                 <h3>
-                  +12
+                  +2
                   <span className="text-300">years of </span>
                   passion
                   <span className="text-300">
@@ -41,13 +45,15 @@ export default function Experience() {
                         className="technology border border-1 rounded-3 p-3"
                       >
                         <div className="d-flex align-items-center gap-2">
-                          <img
-                            src="assets/imgs/home-page-2/experience/google.svg"
+                          <Image
+                            src={bluebay}
+                            height={50}
+                            width={50}
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">Google</h5>
-                            <span className="text-300">2018 - Present</span>
+                            <h5 className="mb-1">Bluebay IT Ltd.</h5>
+                            <span className="text-300">Oct 24 - Present</span>
                           </div>
                         </div>
                       </Link>
@@ -56,13 +62,17 @@ export default function Experience() {
                         className="technology border border-1 rounded-3 p-3"
                       >
                         <div className="d-flex align-items-center gap-2">
-                          <img
-                            src="assets/imgs/home-page-2/experience/twitter.svg"
+                          <Image
+                            src={afbl}
+                            height={50}
+                            width={50}
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">Twitter (X)</h5>
-                            <span className="text-300">2012 - 2015</span>
+                            <h5 className="mb-1">
+                              Akij Food And Beverage Ltd.
+                            </h5>
+                            <span className="text-300">Feb 24 - Oct 24</span>
                           </div>
                         </div>
                       </Link>
@@ -71,35 +81,22 @@ export default function Experience() {
                         className="technology border border-1 rounded-3 p-3"
                       >
                         <div className="d-flex align-items-center gap-2">
-                          <img
-                            src="assets/imgs/home-page-2/experience/amazon.svg"
+                          <Image
+                            src={bracnet}
+                            height={50}
+                            width={50}
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">Amazon</h5>
-                            <span className="text-300">2018 - Present</span>
-                          </div>
-                        </div>
-                      </Link>
-                      <Link
-                        href="#"
-                        className="technology border border-1 rounded-3 p-3"
-                      >
-                        <div className="d-flex align-items-center gap-2">
-                          <img
-                            src="assets/imgs/home-page-2/experience/payPal.svg"
-                            alt="zelio"
-                          />
-                          <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">PayPal</h5>
-                            <span className="text-300">2010 - 2012</span>
+                            <h5 className="mb-1">BracNet Ltd.</h5>
+                            <span className="text-300">Oct 23 - Dec 23</span>
                           </div>
                         </div>
                       </Link>
                     </div>
                   </div>
                   <div className="col-lg-8 ps-lg-5 mt-5 mt-lg-0">
-                    <h6 className="text-linear-4">Senior Software Engineer</h6>
+                    <h6 className="text-linear-4">Software Engineer</h6>
                     <ul className="mt-4">
                       <li className="text-dark mb-3">
                         Led development of scalable web applications,{" "}
@@ -109,8 +106,8 @@ export default function Experience() {
                         and user experience for millions of users.
                       </li>
                       <li className="text-dark mb-3">
-                        Implemented machine learning algorithms to enhance
-                        search functionality.
+                        Design and implement user interfaces using React.js,
+                        Next.js, and TypeScript.
                       </li>
                       <li className="text-dark mb-3">
                         Collaborated with cross-functional teams to integrate
@@ -122,31 +119,25 @@ export default function Experience() {
                         href="#"
                         className="text-300 border border-1 px-3 py-1"
                       >
-                        Python
+                        Reactjs
                       </Link>
                       <Link
                         href="#"
                         className="text-300 border border-1 px-3 py-1"
                       >
-                        TensorFlow
+                        Nextjs
                       </Link>
                       <Link
                         href="#"
                         className="text-300 border border-1 px-3 py-1"
                       >
-                        Angular
+                        Nodejs
                       </Link>
                       <Link
                         href="#"
                         className="text-300 border border-1 px-3 py-1"
                       >
-                        Kubernetes
-                      </Link>
-                      <Link
-                        href="#"
-                        className="text-300 border border-1 px-3 py-1"
-                      >
-                        GCP
+                        Nestjs
                       </Link>
                     </div>
                   </div>

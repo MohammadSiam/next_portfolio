@@ -59,7 +59,7 @@ export default function Service() {
                           <span className="text-secondary-2">HTML</span>,{" "}
                           <span className="text-secondary-2">CSS</span>,{" "}
                           <span className="text-secondary-2">JavaScript</span>,
-                          and modern frameworks like React and Angular.
+                          and modern frameworks like React and Nextjs.
                         </p>
                       </div>
                     </div>
@@ -105,7 +105,10 @@ export default function Service() {
                         <p className="fs-7 text-300 fw-regular">
                           Creating and integrating{" "}
                           <span className="text-secondary-2">RESTful APIs</span>{" "}
-                          to enable smooth communication between front-end and
+                          using <span className="text-secondary-2">Nodejs</span>
+                          ,<span className="text-secondary-2">Expressjs</span>,
+                          <span className="text-secondary-2">Nestjs</span> to
+                          enable smooth communication between front-end and
                           back-end systems.
                         </p>
                       </div>

@@ -49,8 +49,8 @@ export default function Hero() {
                       </span>{" "}
                       <span className="text-secondary-2">NodeJS</span>,{" "}
                       <span className="text-secondary-2">React</span>,{" "}
-                      <span className="text-secondary-2">Angular</span>, and{" "}
-                      <span className="text-secondary-2">Laravel</span>
+                      <span className="text-secondary-2">Nextjs</span>, and{" "}
+                      <span className="text-secondary-2">Nestjs</span>
                       <span className="text-dark">
                         ... I deliver web solutions that are both innovative and
                         robust.

@@ -33,7 +33,7 @@ export default function Header({
                     src="assets/imgs/home-page-2/template/favicon.svg"
                     alt="zelio"
                   />
-                  <span className="fs-4 ms-2">James.dev</span>
+                  <span className="fs-4 ms-2"></span>
                 </Link>
                 <div className="d-none d-lg-flex">
                   <div
@@ -61,11 +61,11 @@ export default function Header({
                           Portfolio
                         </Link>
                       </li>
-                      <li className="nav-item">
+                      {/* <li className="nav-item">
                         <Link className="nav-link" href="#blog">
                           Blog
                         </Link>
-                      </li>
+                      </li> */}
                       <li className="nav-item">
                         <Link className="nav-link" href="#contact">
                           Contact

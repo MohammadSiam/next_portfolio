@@ -112,35 +112,37 @@ export default function Skills() {
                                   className="brand-logo icon_80 icon-shape rounded-3"
                                 >
                                   <img
-                                    src="assets/imgs/home-page-2/hero-1/icon-7.svg"
+                                    src="assets/imgs/home-page-2/hero-1/expres.png"
                                     alt="brand"
                                   />
                                 </Link>
-                                <span className="tool-tip">VueJS</span>
+                                <span className="tool-tip">Express</span>
                               </li>
+
                               <li className="carouselTicker__item mt-6">
                                 <Link
                                   href="#"
                                   className="brand-logo icon_80 icon-shape rounded-3"
                                 >
                                   <img
-                                    src="assets/imgs/home-page-2/hero-1/icon-8.svg"
+                                    src="assets/imgs/home-page-2/hero-1/mysql-logo.svg"
                                     alt="brand"
                                   />
                                 </Link>
-                                <span className="tool-tip">Angular</span>
+                                <span className="tool-tip">Mysql</span>
                               </li>
+
                               <li className="carouselTicker__item mt-6">
                                 <Link
                                   href="#"
                                   className="brand-logo icon_80 icon-shape rounded-3"
                                 >
                                   <img
-                                    src="assets/imgs/home-page-2/hero-1/icon-9.svg"
+                                    src="assets/imgs/home-page-2/hero-1/NestJS.svg"
                                     alt="brand"
                                   />
                                 </Link>
-                                <span className="tool-tip">Laravel</span>
+                                <span className="tool-tip">Nestjs</span>
                               </li>
                               <li className="carouselTicker__item mt-6">
                                 <Link
@@ -170,7 +172,7 @@ export default function Skills() {
                                     Front-End:
                                   </p>
                                   <span className="text-300">
-                                    HTML, CSS, JavaScript, React, Angular
+                                    HTML, CSS, JavaScript, React,Nextjs
                                   </span>
                                 </div>
                               </li>
@@ -180,7 +182,7 @@ export default function Skills() {
                                     Back-End:
                                   </p>
                                   <span className="text-300">
-                                    Node.js, Express, Python, Django
+                                    Node.js, Express, Nestjs
                                   </span>
                                 </div>
                               </li>
@@ -199,9 +201,7 @@ export default function Skills() {
                                   <p className="text-dark text-nowrap mb-0">
                                     Tools &amp; Platforms:
                                   </p>
-                                  <span className="text-300">
-                                    Git, Docker, AWS, Heroku
-                                  </span>
+                                  <span className="text-300">Git, Docker</span>
                                 </div>
                               </li>
                               <li className="mb-3">

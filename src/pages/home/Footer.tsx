@@ -10,7 +10,7 @@ export default function Footer() {
                   src="assets/imgs/home-page-2/template/favicon.svg"
                   alt="zelio"
                 />
-                <span className="fs-4 ms-2">James.dev</span>
+                <span className="fs-4 ms-2">Mohammad Siam</span>
               </a>
               <div className="d-flex justify-content-center gap-3">
                 <a href="http://facebook.com">
@@ -43,10 +43,7 @@ export default function Footer() {
                   {" "}
                   Portfolio{" "}
                 </a>
-                <a href="#blog" className="fs-6">
-                  {" "}
-                  Blog{" "}
-                </a>
+
                 <a href="#contact" className="fs-6">
                   {" "}
                   Contact{" "}

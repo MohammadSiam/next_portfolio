@@ -144,7 +144,8 @@ export default function Education() {
                             Learning Algorithm Comparison
                           </span>
                           <p className="text-dark">
-                            Learning AI, Machine Learning and Deep Learning
+                            Learning base project using AI, Machine Learning and
+                            Deep Learning
                           </p>
                         </div>
                       </div>

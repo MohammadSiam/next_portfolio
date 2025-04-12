@@ -13,16 +13,16 @@ export default function Footer() {
                 <span className="fs-4 ms-2">Mohammad Siam</span>
               </a>
               <div className="d-flex justify-content-center gap-3">
-                <a href="http://facebook.com">
+                <a href="https://www.facebook.com/abdurrahman.siam.9/about">
                   <i className="ri-facebook-circle-fill fs-18" />
                 </a>
-                <a href="http://twitter.com">
+                {/* <a href="http://twitter.com">
                   <i className="ri-twitter-x-fill fs-18" />
-                </a>
-                <a href="http://linkedin.com">
+                </a> */}
+                <a href="https://www.linkedin.com/in/siamk417/">
                   <i className="ri-linkedin-fill fs-18" />
                 </a>
-                <a href="http://github.com">
+                <a href="https://github.com/mohammadSiam/">
                   <i className="ri-github-fill fs-18" />
                 </a>
               </div>

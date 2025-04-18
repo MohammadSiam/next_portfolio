@@ -26,7 +26,7 @@ export default function Header({
               </a>
               <div className="container py-3 px-4">
                 <Link
-                  className="navbar-brand d-flex main-logo align-items-center"
+                  className="d-none d-md-block navbar-brand d-flex main-logo align-items-center"
                   href="/"
                 >
                   <img

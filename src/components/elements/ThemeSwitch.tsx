@@ -24,7 +24,7 @@ export default function ThemeSwitch() {
   return (
     <>
       <div
-        className="dark-light-switcher pe-10 pe-lg-0 pe-0 ps-md-5 ps-0 ps-lg-4 pe-lg-4 d-flex justify-content-center align-items-center icon_80"
+        className="dark-light-switcher pe-5 pe-lg-0 pe-0 ps-md-5 ps-0 ps-lg-4 pe-lg-4 d-flex justify-content-center align-items-center icon_80"
         onClick={toggleTheme}
         style={{ cursor: "pointer" }}
       >

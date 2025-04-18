@@ -76,16 +76,16 @@ export default function Header({
                 </div>
                 <div className="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
                   <div className="d-md-flex d-none gap-3">
-                    <Link href="/http://facebook.com">
+                    <Link href="https://www.facebook.com/abdurrahman.siam.9/about">
                       <i className="ri-facebook-circle-fill fs-18" />
                     </Link>
-                    <Link href="/http://twitter.com">
+                    {/* <Link href="/http://twitter.com">
                       <i className="ri-twitter-x-fill fs-18" />
-                    </Link>
-                    <Link href="/http://linkedin.com">
+                    </Link> */}
+                    <Link href="https://www.linkedin.com/in/siamk417/">
                       <i className="ri-linkedin-fill fs-18" />
                     </Link>
-                    <Link href="/http://github.com">
+                    <Link href="https://github.com/mohammadSiam/">
                       <i className="ri-github-fill fs-18" />
                     </Link>
                   </div>

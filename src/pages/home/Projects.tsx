@@ -10,7 +10,7 @@ const swiperOptions = {
   centeredSlides: false,
   loop: true,
   autoplay: {
-    delay: 4000,
+    delay: 5000,
   },
   pagination: {
     el: ".swiper-pagination",
@@ -24,37 +24,37 @@ const swiperOptions = {
 export default function Projects() {
   const projectDetails = [
     {
-      title: "Integrate AI into the ecommerce system",
+      title: "Sales & Order Management Dashboard – Fair Value Ltd ",
       description:
-        "Developed an online learning platform with course management, quizzes, and progress tracking.",
-      client: "Conceptual JSC",
-      completionTime: "6 months",
-      technologies: "Node.js, React, MongoDB, Stripe",
-      imageUrl: "assets/imgs/home-page-2/projects/project-6.png",
-      demo: "https://www.conceptual.com",
-      github: "https://www.github.com",
-    },
-    {
-      title: "Build a Real-Time Chat Application",
-      description:
-        "Created a real-time chat application with WebSocket integration and user authentication.",
-      client: "Tech Solutions Ltd",
+        "Developed a responsive admin dashboard for monitoring sales performance, order processing, and customer activity. Implemented real-time data visualization including total sales, monthly trends, order summaries, and hub-wise analytics. Focused on clean UX/UI, role-based navigation, and scalable component structure using modern front-end technologies.",
+      client: "Akij food and Beverage Ltd",
       completionTime: "4 months",
       technologies: "React, Node.js, WebSocket, Firebase",
       imageUrl: "assets/imgs/home-page-2/projects/project-5.png",
-      demo: "https://www.conceptual.com",
-      github: "https://www.github.com",
+      // demo: "https://www.conceptual.com",
+      // github: "https://www.github.com",
     },
     {
-      title: "Develop a Portfolio Website",
+      title: "University Application Management System – UAPP",
       description:
-        "Designed and developed a responsive portfolio website to showcase projects and skills.",
-      client: "Freelance",
-      completionTime: "2 months",
-      technologies: "Next.js, Tailwind CSS, Vercel",
+        "Built an intuitive dashboard for managing university applications, student data, and consultant workflows. Enabled tracking of application statuses, document reviews, and consultant activity with clear visual insights. Integrated filters for intake periods and streamlined user roles like admin, consultant, and admission manager to optimize the application pipeline.",
+      client: "UAPP",
+      completionTime: "Running",
+      technologies: "React, Bootstrap, Rest API, Hubspot",
       imageUrl: "assets/imgs/home-page-2/projects/project-4.png",
       // demo: "https://www.conceptual.com",
       // github: "https://www.github.com",
+    },
+    {
+      title: "A Hotel Booking system",
+      description:
+        "​The website Trillo Hotel Booking is a static, front-end hotel booking interface. It features a clean and responsive layout built with HTML and CSS, showcasing a fictional hotel named Hotel Las Palmas located in Albufeira, Portugal. The site includes sections for hotel details, user reviews, and booking availability, with placeholder text indicating areas for future content. Navigation options for Hotels, Flights, Car Rentals, and Tours are present, suggesting a comprehensive travel booking platform. Overall, the project serves as a design prototype or UI concept for a hotel booking application.",
+      client: "Learning Purpose",
+      completionTime: "1 months",
+      technologies: "HTML,SCSS,JavaScript",
+      imageUrl: "assets/imgs/home-page-2/projects/project-6.png",
+      demo: "https://mohammadsiam.github.io/Trillo_hotel_booking/",
+      github: "https://github.com/MohammadSiam/Trillo_hotel_booking",
     },
   ];
 
@@ -187,7 +187,7 @@ export default function Projects() {
                       ))}
                     </div>
                   </Swiper>
-                  <div className="position-absolute bottom-0 end-0 gap-2 pb-7 pe-5 d-none d-md-flex">
+                  <div className="position-absolute bottom-0 end-0 gap-2 pb-7 pe-5 d-none d-flex">
                     <div className="swiper-button-prev end-0 shadow position-relative">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

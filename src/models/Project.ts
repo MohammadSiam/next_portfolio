@@ -1,9 +1,14 @@
-// models/Project.ts
 import { Document, model, models, Schema } from "mongoose";
 
 export interface IProject extends Document {
-  name: string;
+  title: string;
   description: string;
+  client: string;
+  completionTime: string;
+  technologies: string;
+  imageURL: string;
+  demo: string;
+  github: string;
   status: "active" | "archived";
   createdAt: Date;
   updatedAt: Date;
@@ -11,8 +16,14 @@ export interface IProject extends Document {
 
 const ProjectSchema: Schema = new Schema<IProject>(
   {
-    name: { type: String, required: true },
-    description: { type: String },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    client: { type: String, required: true },
+    completionTime: { type: String, required: true },
+    technologies: { type: String, required: true },
+    imageURL: { type: String, required: true },
+    demo: { type: String },
+    github: { type: String },
     status: { type: String, enum: ["active", "archived"], default: "active" },
   },
   { timestamps: true }

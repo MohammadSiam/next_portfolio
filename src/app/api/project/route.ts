@@ -29,14 +29,8 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
 
-    if (!body?.name || typeof body.name !== "string") {
-      return NextResponse.json(
-        { message: "Project name is required and must be a string." },
-        { status: HttpStatusCode.BadRequest }
-      );
-    }
-
     const createdProject = await Project.create(body);
+    console.log(createdProject, "body");
 
     return NextResponse.json(createdProject, {
       status: HttpStatusCode.Created,

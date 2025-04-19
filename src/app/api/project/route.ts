@@ -1,5 +1,3 @@
-// app/api/project/route.ts
-
 import { Project } from "@/models/Project";
 import { connectDB } from "@/utils/mongoose";
 import { HttpStatusCode } from "axios"; // optional for better readability
@@ -8,9 +6,13 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET() {
   try {
     await connectDB();
-
     const projects = await Project.find().sort({ createdAt: -1 });
-
+    if (projects.length === 0) {
+      return NextResponse.json(
+        { message: "No Projects found" },
+        { status: HttpStatusCode.NotFound }
+      );
+    }
     return NextResponse.json(projects, { status: HttpStatusCode.Ok });
   } catch (error) {
     console.error("GET /api/project error:", error);

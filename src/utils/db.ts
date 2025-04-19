@@ -1,4 +1,3 @@
-// lib/mongodb.ts
 import { Db, MongoClient } from "mongodb";
 
 if (!process.env.MONGODB_URI) {

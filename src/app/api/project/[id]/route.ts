@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, { params }: any) {
-  const { id } = params;
+  const { id } = await params;
 
   try {
     await connectDB();
@@ -37,7 +37,7 @@ export async function GET(req: NextRequest, { params }: any) {
 }
 
 export async function PUT(req: NextRequest, { params }: any) {
-  const { id } = params;
+  const { id } = await params;
   try {
     await connectDB();
 
@@ -73,7 +73,7 @@ export async function PUT(req: NextRequest, { params }: any) {
 }
 
 export async function DELETE(req: NextRequest, { params }: any) {
-  const { id } = params;
+  const { id } = await params;
   try {
     await connectDB();
 

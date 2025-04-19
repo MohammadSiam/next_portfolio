@@ -1,4 +1,5 @@
 import { Project } from "@/models/Project";
+import cloudinary from "@/utils/cloudinary.config";
 import { connectDB } from "@/utils/mongoose";
 import { HttpStatusCode } from "axios";
 import mongoose from "mongoose";
@@ -72,6 +73,18 @@ export async function PUT(req: NextRequest, { params }: any) {
   }
 }
 
+function extractPublicIdFromUrl(url: string): string | null {
+  try {
+    const parts = url.split("/upload/")[1]; // v1745085504/kevmio4cqtp1xvqcpo7j.svg
+    const withoutVersion = parts.split("/").slice(1).join("/"); // kevmio4cqtp1xvqcpo7j.svg
+    const publicId = withoutVersion.replace(/\.[^/.]+$/, ""); // remove extension
+    return publicId;
+  } catch (e) {
+    console.error("Failed to extract public_id from URL:", e);
+    return null;
+  }
+}
+
 export async function DELETE(req: NextRequest, { params }: any) {
   const { id } = await params;
   try {
@@ -84,14 +97,24 @@ export async function DELETE(req: NextRequest, { params }: any) {
       );
     }
 
-    const deleted = await Project.findByIdAndDelete(id);
+    const project = await Project.findById(id);
 
-    if (!deleted) {
+    if (!project) {
       return NextResponse.json(
         { message: "Project not found" },
         { status: HttpStatusCode.NotFound }
       );
     }
+
+    const publicId = extractPublicIdFromUrl(project.imageURL);
+
+    if (publicId) {
+      await cloudinary.uploader.destroy(publicId);
+    } else {
+      console.error("Public ID not found, skipping Cloudinary deletion");
+    }
+
+    await Project.findByIdAndDelete(id);
 
     return NextResponse.json(
       { message: "Project deleted successfully" },

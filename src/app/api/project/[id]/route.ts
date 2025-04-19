@@ -4,21 +4,20 @@ import { HttpStatusCode } from "axios";
 import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  _: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(req: NextRequest, { params }: any) {
+  const { id } = params;
+
   try {
     await connectDB();
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(
         { message: "Invalid project ID" },
         { status: HttpStatusCode.BadRequest }
       );
     }
 
-    const project = await Project.findById(params.id);
+    const project = await Project.findById(id);
 
     if (!project) {
       return NextResponse.json(
@@ -37,14 +36,12 @@ export async function GET(
   }
 }
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(req: NextRequest, { params }: any) {
+  const { id } = params;
   try {
     await connectDB();
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(
         { message: "Invalid project ID" },
         { status: HttpStatusCode.BadRequest }
@@ -53,7 +50,7 @@ export async function PUT(
 
     const data = await req.json();
 
-    const updated = await Project.findByIdAndUpdate(params.id, data, {
+    const updated = await Project.findByIdAndUpdate(id, data, {
       new: true,
       runValidators: true,
     });
@@ -75,21 +72,19 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  _: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: NextRequest, { params }: any) {
+  const { id } = params;
   try {
     await connectDB();
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(
         { message: "Invalid project ID" },
         { status: HttpStatusCode.BadRequest }
       );
     }
 
-    const deleted = await Project.findByIdAndDelete(params.id);
+    const deleted = await Project.findByIdAndDelete(id);
 
     if (!deleted) {
       return NextResponse.json(

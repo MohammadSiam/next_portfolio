@@ -1,4 +1,3 @@
-import HomeLayout from "@/components/layouts/HomeLayouts";
 import Contact from "@/pages/home/Contact";
 import Education from "@/pages/home/Education";
 import Experience from "@/pages/home/Experience";
@@ -11,16 +10,14 @@ import Statics from "@/pages/home/Statics";
 export default function Home() {
   return (
     <>
-      <HomeLayout>
-        <Hero />
-        <Statics />
-        <Service />
-        <Experience />
-        <Education />
-        <Projects />
-        <Skills />
-        <Contact />
-      </HomeLayout>
+      <Hero />
+      <Statics />
+      <Service />
+      <Experience />
+      <Education />
+      <Projects />
+      <Skills />
+      <Contact />
     </>
   );
 }

@@ -75,9 +75,9 @@ export async function PUT(req: NextRequest, { params }: any) {
 
 function extractPublicIdFromUrl(url: string): string | null {
   try {
-    const parts = url.split("/upload/")[1]; // v1745085504/kevmio4cqtp1xvqcpo7j.svg
-    const withoutVersion = parts.split("/").slice(1).join("/"); // kevmio4cqtp1xvqcpo7j.svg
-    const publicId = withoutVersion.replace(/\.[^/.]+$/, ""); // remove extension
+    const parts = url.split("/upload/")[1];
+    const withoutVersion = parts.split("/")[1];
+    const publicId = withoutVersion.replace(/\.[^/.]+$/, "");
     return publicId;
   } catch (e) {
     console.error("Failed to extract public_id from URL:", e);

@@ -1,38 +1,31 @@
-// react icons
-import { FaDribbble } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { ImFacebook2 } from "react-icons/im";
-
 const ProjectCard = () => {
   return (
-    <div className="w-full sm:w-[80%] lg:w-[60%] rounded-md relative group overflow-hidden">
-      {/*  image  */}
-      <img
-        src="https://img.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg?t=st=1728139729~exp=1728143329~hmac=dd0870841ecbe138afdb639fee17206241a94b02b17e1e681ad16eba38f0bd7b&w=996"
-        alt="animated_cards"
-        className="w-full h-[350px] object-cover"
-      />
-
-      {/*  texts  */}
-      <div className="flex flex-col items-center justify-center backdrop-blur-md  absolute bottom-0 w-full pt-[15px] pb-[30px] translate-y-[200px] group-hover:translate-y-0 transition-all duration-[400ms] overflow-hidden">
-        <h3 className="text-[1.7rem] translate-y-[-50px]  text-neutral-500 group-hover:translate-y-0 transition-all duration-700 font-bold tracking-[5px] leading-[30px] opacity-0 group-hover:opacity-100">
-          Jack Leo
-        </h3>
-        <p className="text-[1rem] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-          Product Designer
-        </p>
-
-        {/*  socials icons  */}
-        <div className="flex items-center gap-[20px] mt-[15px]">
-          <div className="translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-            <ImFacebook2 className="text-[1.3rem] text-white cursor-pointer hover:scale-[1.3] transition-all duration-200" />
+    <div className="py-2 w-full md:py-2">
+      <div className="relative md:px-20 md:p-0 rounded-2xl transform duration-500 hover:shadow-2xl cursor-pointer hover:-translate-y-1">
+        <img
+          className="h-full object-cover py-2 rounded-2xl"
+          src="https://inviqa.com/sites/default/files/styles/pullout/public/2020-08/XD-1.jpeg?h=f75d236a&itok=PBoXPDmW"
+          width="733"
+          height="412"
+          alt=""
+          typeof="foaf:Image"
+        />
+        <div className="content bg-white p-2 pt-8 md:p-12 pb-12 lg:max-w-lg w-full lg:absolute top-20 right-5">
+          <div className="flex justify-between font-bold text-sm">
+            <p>Product Review</p>
+            <p className="text-gray-400">17th March, 2021</p>
           </div>
-          <div className="translate-y-[100px] group-hover:translate-y-0 transition-all duration-[800ms] opacity-0 group-hover:opacity-100">
-            <FaXTwitter className="text-[1.3rem] text-white cursor-pointer hover:scale-[1.3] transition-all duration-200" />
-          </div>
-          <div className="translate-y-[100px] group-hover:translate-y-0 transition-all duration-[1100ms] opacity-0 group-hover:opacity-100">
-            <FaDribbble className="text-[1.3rem] text-white cursor-pointer hover:scale-[1.3] transition-all duration-200" />
-          </div>
+          <h2 className="text-3xl font-semibold mt-4 md:mt-10">
+            Coffee From Heaven
+          </h2>
+          <p className="my-3 text-justify font-medium text-gray-700 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            aperiam nulla cupiditate saepe sed quis veritatis minus rem adipisci
+            aliquid.
+          </p>
+          <button className="mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm dark:hover:bg-purple-800">
+            Read More
+          </button>
         </div>
       </div>
     </div>

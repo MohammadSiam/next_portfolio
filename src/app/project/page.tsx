@@ -7,11 +7,9 @@ function AllProjects() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 col-md-10">
-              <div className="section-title text-center mb-5">
+              <div className="section-title text-center mb-2">
                 <h2 className="title">All Projects</h2>
-                <p className="text-light">
-                  Here are some of my projects that I have worked on.
-                </p>
+                <p>Here are some of my projects that I have worked on.</p>
               </div>
             </div>
           </div>

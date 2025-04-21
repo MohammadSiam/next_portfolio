@@ -13,9 +13,9 @@ export default function Header({
   return (
     <>
       <header>
-        <div className="container position-relative">
-          <div className="position-relative">
-            <nav className="navbar navbar-expand-lg navbar-home-2 flex-nowrap z-999 p-0 border border-1 rounded-3">
+        <div className="container relative">
+          <div className="relative">
+            <nav className="navbar navbar-expand-lg navbar-home-2 h-[80px] flex-nowrap z-999 p-0 border border-1 rounded-3">
               <a
                 className="navbar-menu p-4 text-center square-100 menu-tigger icon_80 icon-shape d-none d-md-flex"
                 data-bs-target=".offCanvas__info"
@@ -26,7 +26,7 @@ export default function Header({
               </a>
               <div className="container py-3 px-4">
                 <Link
-                  className="d-none d-md-block navbar-brand d-flex main-logo align-items-center"
+                  className="d-none d-md-block navbar-brand d-flex main-logo align-items-center pt-4"
                   href="/"
                 >
                   <img
@@ -35,12 +35,12 @@ export default function Header({
                   />
                   <span className="fs-4 ms-2"></span>
                 </Link>
-                <div className="d-none d-lg-flex">
+                <div>
                   <div
                     className="collapse navbar-collapse"
                     id="navbarSupportedContent"
                   >
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className=" me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
                         <Link className="nav-link active" href="#about">
                           About me

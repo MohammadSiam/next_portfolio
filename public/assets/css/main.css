@@ -3018,7 +3018,7 @@ textarea {
     border-radius: 0rem;
   }
   .navbar .navbar-nav .nav-item .nav-link:hover {
-    color: #edeaf8;
+    color: #edeaf8 !important;
     background-color: transparent !important;
   }
 }

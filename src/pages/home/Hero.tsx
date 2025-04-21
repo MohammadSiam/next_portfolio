@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="container hero-2">
           <div className="border border-1 rounded-3">
             <div className="box-linear-animation position-relative z-1">
-              <div className="row align-items-end py-60">
+              <div className="row align-items-end py-3">
                 <div className="col-lg-5 ps-lg-5 text-lg-start text-center">
                   <div className="position-relative mb-lg-0 mb-5">
                     <Image src={siam} width={500} height={500} alt="zelio" />

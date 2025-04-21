@@ -7,6 +7,7 @@ import "../../public/assets/css/vendors/swiper-bundle.min.css";
 import "../../public/assets/fonts/remixicon/remixicon.css";
 import "./globals.css";
 
+import HomeLayout from "@/components/layouts/HomeLayouts";
 import { DM_Mono, Playfair_Display, Urbanist } from "next/font/google";
 
 const urbanist = Urbanist({
@@ -49,7 +50,7 @@ export default function RootLayout({
         className={`${urbanist.variable} ${playfair_display.variable} ${dmMono.variable}`}
         suppressHydrationWarning
       >
-        {children}
+        <HomeLayout>{children}</HomeLayout>
       </body>
     </html>
   );

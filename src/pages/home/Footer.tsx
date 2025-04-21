@@ -3,7 +3,7 @@ export default function Footer() {
     <>
       <footer>
         <div className="section-footer-2 position-relative">
-          <div className="container position-relative z-1 border-top border-1 pb-2 pt-4">
+          <div className="container position-relative z-1 border-top pb-2 pt-4">
             <div className="text-center">
               <a className="d-flex main-logo align-items-center justify-content-center mb-3">
                 <img

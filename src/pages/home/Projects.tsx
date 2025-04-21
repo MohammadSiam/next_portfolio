@@ -117,7 +117,7 @@ export default function Projects() {
                                   {project?.demo && (
                                     <Link
                                       href="#"
-                                      className="text-300 border-bottom border-1 px-2 pb-2 link-hover"
+                                      className="text-300 flex gap-3 items-center px-2 pb-2 link-hover"
                                     >
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ export default function Projects() {
                                   {project?.github && (
                                     <Link
                                       href="#"
-                                      className="text-300 border-bottom border-1 px-2 pb-2 link-hover"
+                                      className="text-300 flex gap-2 items-center px-2 pb-2 link-hover"
                                     >
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"

@@ -35,12 +35,9 @@ export default function Header({
                   />
                   <span className="fs-4 ms-2"></span>
                 </Link>
-                <div>
-                  <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                  >
-                    <ul className=" me-auto mb-2 mb-lg-0">
+                <div className="d-none d-lg-flex">
+                  <div className="navbar-collapse" id="navbarSupportedContent">
+                    <ul className="flex gap-3 items-center font-bold text-[18px] dark:text-white me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
                         <Link className="nav-link active" href="#about">
                           About me

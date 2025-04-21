@@ -37,9 +37,9 @@ export default function Header({
                 </Link>
                 <div className="d-none d-lg-flex">
                   <div className="" id="navbarSupportedContent">
-                    <ul className="flex gap-3 items-center font-bold text-[18px] dark:text-white me-auto mb-2 mb-lg-0">
+                    <ul className="flex gap-3 items-center font-bold text-[18px] dark:text-gray-300 me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
-                        <Link className="nav-link active" href="#about">
+                        <Link className="nav-link" href="#about">
                           About me
                         </Link>
                       </li>

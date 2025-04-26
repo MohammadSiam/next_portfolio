@@ -28,32 +28,32 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
               <div className="mobile-menu-wrap mobile-header-border">
                 <nav>
                   <ul className="mobile-menu font-heading ps-0">
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={handleMobileMenu}>
                       <Link className="nav-link active" href="/">
                         Home
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/services">
-                        Services
+                    <li className="nav-item" onClick={handleMobileMenu}>
+                      <Link className="nav-link" href="#resume">
+                        Resume
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/work">
+                    <li className="nav-item" onClick={handleMobileMenu}>
+                      <Link className="nav-link" href="#portfolio">
                         Portfolio
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/pricing">
-                        Pricing
+                    <li className="nav-item" onClick={handleMobileMenu}>
+                      <Link className="nav-link" href="#services">
+                        Services
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/blog-list">
-                        Blog
+                    <li className="nav-item" onClick={handleMobileMenu}>
+                      <Link className="nav-link" href="#contact">
+                        Contact
                       </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={handleMobileMenu}>
                       <Link className="nav-link" href="/#contact">
                         Contact
                       </Link>

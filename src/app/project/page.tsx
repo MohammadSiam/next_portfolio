@@ -12,6 +12,7 @@ function AllProjects() {
         setLoading(true);
         const response = await fetch("/api/project");
         const result = await response.json();
+        setProjects(result);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -33,12 +34,12 @@ function AllProjects() {
               </div>
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div>
             {loading ? (
               <div className="text-center">Loading...</div>
             ) : (
               projects.map((project) => (
-                <div key={project._id} className="col-lg-4 col-md-6">
+                <div key={project._id}>
                   <ProjectCard project={project} />
                 </div>
               ))

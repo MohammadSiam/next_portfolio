@@ -1,6 +1,6 @@
 "use client";
 import { IProject } from "@/models/Project";
-import axios from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -31,8 +31,9 @@ export default function Projects() {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("/api/project");
-        setProjects(response.data);
+        const response = await fetch("/api/project");
+        const result = await response.json();
+        setProjects(result);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -83,10 +84,12 @@ export default function Projects() {
                               <div className="p-lg-5 p-md-4 p-3 border border-1 mt-5 bg-3">
                                 <div className="row">
                                   <div className="col-lg-5">
-                                    <img
+                                    <Image
                                       className="img-fluid"
                                       src={project.imageURL}
                                       alt={project.title}
+                                      width={500}
+                                      height={600}
                                     />
                                   </div>
                                   <div className="col-lg-7 ps-lg-5 mt-5 mt-lg-0">

@@ -1,6 +1,7 @@
 import { Document, model, models, Schema } from "mongoose";
 
 export interface IProject extends Document {
+  _id: string;
   title: string;
   description: string;
   client: string;

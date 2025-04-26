@@ -1,4 +1,6 @@
-const ProjectCard = () => {
+import { IProject } from "@/models/Project";
+
+const ProjectCard = ({ project }: { project: IProject }) => {
   return (
     <div className="py-2 w-full md:py-2">
       <div className="relative md:px-20 md:p-0 rounded-2xl transform duration-500 hover:shadow-2xl cursor-pointer hover:-translate-y-1">

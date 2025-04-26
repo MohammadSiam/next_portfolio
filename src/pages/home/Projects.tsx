@@ -135,7 +135,8 @@ export default function Projects() {
                                     <div className="d-flex flex-wrap align-items-center gap-3 mt-7">
                                       {project?.demo && (
                                         <Link
-                                          href="#"
+                                          href={project?.demo}
+                                          target="_blank"
                                           className="text-300 flex gap-3 items-center px-2 pb-2 link-hover"
                                         >
                                           <svg
@@ -155,7 +156,8 @@ export default function Projects() {
                                       )}
                                       {project?.github && (
                                         <Link
-                                          href="#"
+                                          href={project?.github}
+                                          target="_blank"
                                           className="text-300 flex gap-2 items-center px-2 pb-2 link-hover"
                                         >
                                           <svg
@@ -181,7 +183,7 @@ export default function Projects() {
                           ))}
                         </div>
                       </Swiper>
-                      <div className="position-absolute bottom-0 end-0 gap-2 pb-7 pe-5 d-flex">
+                      <div className="position-absolute hidden md:block bottom-0 end-0 gap-2 pb-7 pe-5 d-flex">
                         <div className="swiper-button-prev end-0 shadow position-relative">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

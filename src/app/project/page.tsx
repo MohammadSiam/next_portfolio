@@ -36,7 +36,9 @@ function AllProjects() {
           </div>
           <div>
             {loading ? (
-              <div className="text-center">Loading...</div>
+              <div className="w-full mx-auto bg-secondary p-4 rounded-md border border-[e5eaf2] boxShadow animate-pulse">
+                <p className="w-[90%] min-h-[300px] bg-[e5eaf2] rounded-md"></p>
+              </div>
             ) : (
               projects.map((project) => (
                 <div key={project._id}>

@@ -17,8 +17,8 @@ const ProjectCard = ({ project }: { project: IProject }) => {
             <p>Project Review</p>
             <p className="text-gray-400">{project.completionTime}</p>
           </div>
-          <h2 className="font-semibold mt-4 md:mt-10">{project.title}</h2>
-          <button className="mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm cursor-pointer dark:bg-white">
+          <h2 className="font-semibold mt-2 md:mt-10">{project.title}</h2>
+          <button className="mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm cursor-pointer">
             Read More
           </button>
         </div>

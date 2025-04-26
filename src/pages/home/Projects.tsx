@@ -51,20 +51,19 @@ export default function Projects() {
           <div className="rounded-3 border border-1 position-relative overflow-hidden">
             <div className="box-linear-animation position-relative z-1">
               <div className="p-lg-8 p-md-6 p-3 position-relative z-1">
-                <div className="d-flex align-items-center">
-                  <svg
-                    className="text-primary-2 me-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={5}
-                    height={6}
-                    viewBox="0 0 5 6"
-                    fill="none"
-                  >
-                    <circle cx="2.5" cy={3} r="2.5" fill="#A8FF53" />
-                  </svg>
-                  <span className="text-linear-4 d-flex align-items-center">
-                    Projects
-                  </span>
+                <div className="d-flex align-items-center justify-between">
+                  <div>
+                    <span className="text-linear-4 d-flex align-items-center">
+                      Projects
+                    </span>
+                  </div>
+                  <div>
+                    <button className="btn btn-primary-2 rounded-2">
+                      <Link href="/project">
+                        <span className="text-linear-4">View All Projects</span>
+                      </Link>
+                    </button>
+                  </div>
                 </div>
                 <h3>My Recent Works</h3>
                 <div className="position-relative">

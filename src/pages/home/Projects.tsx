@@ -85,7 +85,7 @@ export default function Projects() {
                                 <div className="row">
                                   <div className="col-lg-5">
                                     <Image
-                                      className="img-fluid"
+                                      className="h-[412px] object-cover"
                                       src={project.imageURL}
                                       alt={project.title}
                                       width={500}

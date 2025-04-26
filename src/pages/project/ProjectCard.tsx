@@ -6,7 +6,7 @@ const ProjectCard = ({ project }: { project: IProject }) => {
     <div className="py-2 w-full md:py-2">
       <div className="relative md:px-20 md:p-0 rounded-2xl transform duration-500 hover:shadow-2xl hover:-translate-y-1">
         <Image
-          className="h-full object-cover py-2 rounded-2xl"
+          className="h-[412] object-cover py-2 rounded-2xl"
           src={project.imageURL}
           width={733}
           height={412}

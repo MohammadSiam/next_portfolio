@@ -1,7 +1,18 @@
 import { IProject } from "@/models/Project";
 import Image from "next/image";
+import { useState } from "react";
+import Modal from "./ProjectDetailsModal";
 
 const ProjectCard = ({ project }: { project: IProject }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="py-2 w-full md:py-2">
       <div className="relative md:px-20 md:p-0 rounded-2xl transform duration-500 hover:shadow-2xl hover:-translate-y-1">
@@ -18,11 +29,15 @@ const ProjectCard = ({ project }: { project: IProject }) => {
             <p className="text-gray-400">{project.completionTime}</p>
           </div>
           <h2 className="font-semibold mt-2 md:mt-10">{project.title}</h2>
-          <button className="mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm cursor-pointer">
+          <button
+            onClick={openModal}
+            className="mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm cursor-pointer"
+          >
             Read More
           </button>
         </div>
       </div>
+      <Modal project={project} isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

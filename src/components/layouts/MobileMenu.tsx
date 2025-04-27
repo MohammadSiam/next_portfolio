@@ -49,12 +49,12 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
                       </Link>
                     </li>
                     <li className="nav-item" onClick={handleMobileMenu}>
-                      <Link className="nav-link" href="#contact">
-                        Contact
+                      <Link className="nav-link" href="/#projects">
+                        Projects
                       </Link>
                     </li>
                     <li className="nav-item" onClick={handleMobileMenu}>
-                      <Link className="nav-link" href="/#contact">
+                      <Link className="nav-link" href="#contact">
                         Contact
                       </Link>
                     </li>

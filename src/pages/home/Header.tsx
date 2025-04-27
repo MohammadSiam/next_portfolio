@@ -38,13 +38,13 @@ export default function Header({
                   <div className="" id="navbarSupportedContent">
                     <ul className="flex gap-3 items-center font-semibold dark:text-gray-300 me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
-                        <Link className="nav-link" href="/#about">
-                          About me
+                        <Link className="nav-link" href="/#resume">
+                          Resume
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="/#resume">
-                          Resume
+                        <Link className="nav-link" href="/#portfolio">
+                          Portfolio
                         </Link>
                       </li>
                       <li className="nav-item">
@@ -53,15 +53,10 @@ export default function Header({
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="/#portfolio">
-                          Portfolio
+                        <Link className="nav-link" href="/#projects">
+                          Projects
                         </Link>
                       </li>
-                      {/* <li className="nav-item">
-                        <Link className="nav-link" href="#blog">
-                          Blog
-                        </Link>
-                      </li> */}
                       <li className="nav-item">
                         <Link className="nav-link" href="/#contact">
                           Contact

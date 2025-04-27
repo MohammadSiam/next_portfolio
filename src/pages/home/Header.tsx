@@ -1,7 +1,9 @@
 import ThemeSwitch from "@/components/elements/ThemeSwitch";
 import MobileMenu from "@/components/layouts/MobileMenu";
 import OffCanvas from "@/components/layouts/OffCanvas";
+import Image from "next/image";
 import Link from "next/link";
+import favicon from "../../../public/favicon.svg";
 
 export default function Header({
   scroll,
@@ -29,10 +31,7 @@ export default function Header({
                   className="d-none d-md-block navbar-brand d-flex main-logo align-items-center pt-4"
                   href="/"
                 >
-                  <img
-                    src="assets/imgs/home-page-2/template/favicon.svg"
-                    alt="zelio"
-                  />
+                  <Image height={40} width={40} src={favicon} alt="zelio" />
                   <span className="fs-4 ms-2"></span>
                 </Link>
                 <div className="d-none d-lg-flex">

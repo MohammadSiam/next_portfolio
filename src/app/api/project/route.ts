@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.formData();
     const rawData = body.get("data") as string;
-    const image: any = body.get("image") as Blob;
+    const image: any = body.get("imageURL") as File;
     const imageBuffer = await image.arrayBuffer();
     const buffer = Buffer.from(imageBuffer);
     const dataURI: any = toDataUri(buffer, image.name);

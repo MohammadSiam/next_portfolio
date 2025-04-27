@@ -55,17 +55,26 @@ function ProjectCreate() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
     const data = new FormData();
 
-    data.append("title", formData.title);
-    data.append("description", formData.description);
-    data.append("client", formData.client);
-    data.append("completionTime", formData.completionTime);
-    data.append("technologies", formData.technologies);
-    data.append("demo", formData.demo);
-    data.append("github", formData.github);
+    // The data object that contains text-based fields
+    const formDataObject = {
+      title: formData.title,
+      description: formData.description,
+      client: formData.client,
+      completionTime: formData.completionTime,
+      technologies: formData.technologies,
+      demo: formData.demo,
+      github: formData.github,
+    };
+
+    // Append the JSON data as a string
+    data.append("data", JSON.stringify(formDataObject));
+
+    // Append the image file (if present)
     if (formData.imageFile) {
-      data.append("image", formData.imageFile);
+      data.append("imageURL", formData.imageFile);
     }
 
     try {
@@ -75,15 +84,25 @@ function ProjectCreate() {
       });
 
       if (!res.ok) {
-        throw new Error("Failed to create project");
+        alert("Failed to create project");
+        return;
       }
-
-      const result = await res.json();
-      console.log(result);
+      alert("Project Created Successfully...");
+      setFormData({
+        title: "",
+        description: "",
+        client: "",
+        completionTime: "",
+        technologies: "",
+        demo: "",
+        github: "",
+        imageFile: null,
+      });
     } catch (error) {
-      console.error(error);
+      console.error("Error in submitting project:", error);
     }
   };
+
   return (
     <section className="pt-[130px] pb-3">
       <div className="container">
@@ -100,28 +119,51 @@ function ProjectCreate() {
               id="title"
               value={formData.title}
               onChange={handleInputChange}
+              placeholder=" " // important
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.title
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1" // if has value, float up
+        : "top-3.5 left-5 scale-100"
+    } // if empty, stay normal
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Project Title
             </span>
           </label>
 
           {/* Description */}
+          {/* Project Description */}
           <label className="relative w-full">
             <textarea
               name="description"
               id="description"
               value={formData.description}
               onChange={handleInputChange}
+              placeholder=" " // Add placeholder
               className="peer border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.description
+        ? "-top-3 left-2 scale-[0.9] text-[#3B9DF8] bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] peer-focus:px-1
+  `}
+            >
               Project Description
             </span>
           </label>
 
-          {/* Client */}
+          {/* Client Name */}
           <label className="relative w-full">
             <input
               type="text"
@@ -129,9 +171,20 @@ function ProjectCreate() {
               id="client"
               value={formData.client}
               onChange={handleInputChange}
+              placeholder=" "
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.client
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Client Name
             </span>
           </label>
@@ -144,14 +197,25 @@ function ProjectCreate() {
               id="completionTime"
               value={formData.completionTime}
               onChange={handleInputChange}
+              placeholder=" "
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.completionTime
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Completion Time
             </span>
           </label>
 
-          {/* Technologies */}
+          {/* Technologies Used */}
           <label className="relative w-full">
             <input
               type="text"
@@ -159,9 +223,20 @@ function ProjectCreate() {
               id="technologies"
               value={formData.technologies}
               onChange={handleInputChange}
+              placeholder=" "
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.technologies
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Technologies Used
             </span>
           </label>
@@ -174,9 +249,20 @@ function ProjectCreate() {
               id="demo"
               value={formData.demo}
               onChange={handleInputChange}
+              placeholder=" "
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.demo
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Demo Link
             </span>
           </label>
@@ -189,9 +275,20 @@ function ProjectCreate() {
               id="github"
               value={formData.github}
               onChange={handleInputChange}
+              placeholder=" "
               className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
             />
-            <span className="absolute top-3.5 left-5 peer-focus:-top-3  peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300">
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.github
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    }
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
               Github Link
             </span>
           </label>
@@ -201,7 +298,7 @@ function ProjectCreate() {
             <input
               type="file"
               id="image_input"
-              name="image"
+              name="imageURL"
               className="hidden"
               accept="image/*"
               onChange={handleImageChange}

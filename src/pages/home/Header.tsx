@@ -38,22 +38,22 @@ export default function Header({
                   <div className="" id="navbarSupportedContent">
                     <ul className="flex gap-3 items-center font-semibold dark:text-gray-300 me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
-                        <Link className="nav-link" href="#about">
+                        <Link className="nav-link" href="/#about">
                           About me
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="#resume">
+                        <Link className="nav-link" href="/#resume">
                           Resume
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="#services">
+                        <Link className="nav-link" href="/#services">
                           Services
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="#portfolio">
+                        <Link className="nav-link" href="/#portfolio">
                           Portfolio
                         </Link>
                       </li>
@@ -63,7 +63,7 @@ export default function Header({
                         </Link>
                       </li> */}
                       <li className="nav-item">
-                        <Link className="nav-link" href="#contact">
+                        <Link className="nav-link" href="/#contact">
                           Contact
                         </Link>
                       </li>
@@ -72,16 +72,25 @@ export default function Header({
                 </div>
                 <div className="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
                   <div className="d-md-flex d-none gap-3">
-                    <Link href="https://www.facebook.com/abdurrahman.siam.9/about">
+                    <Link
+                      target="_blank"
+                      href="https://www.facebook.com/abdurrahman.siam.9/about"
+                    >
                       <i className="ri-facebook-circle-fill fs-18" />
                     </Link>
                     {/* <Link href="/http://twitter.com">
                       <i className="ri-twitter-x-fill fs-18" />
                     </Link> */}
-                    <Link href="https://www.linkedin.com/in/siamk417/">
+                    <Link
+                      target="_blank"
+                      href="https://www.linkedin.com/in/siamk417/"
+                    >
                       <i className="ri-linkedin-fill fs-18" />
                     </Link>
-                    <Link href="https://github.com/mohammadSiam/">
+                    <Link
+                      target="_blank"
+                      href="https://github.com/mohammadSiam/"
+                    >
                       <i className="ri-github-fill fs-18" />
                     </Link>
                   </div>

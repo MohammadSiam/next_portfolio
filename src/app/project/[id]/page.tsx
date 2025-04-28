@@ -21,6 +21,7 @@ export default function EditProject({
 }) {
   const { id } = use(params);
   const [previewImage, setPreviewImage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<ProjectFormData>({
     title: "",
     description: "",
@@ -73,35 +74,67 @@ export default function EditProject({
     setPreviewImage("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const fetchProject = async () => {
+    try {
+      const response = await fetch(`/api/project/${id}`);
+      const data = await response.json();
+      setFormData({
+        title: data.title || "",
+        description: data.description || "",
+        client: data.client || "",
+        completionTime: data.completionTime || "",
+        technologies: data.technologies || "",
+        demo: data.demo || "",
+        github: data.github || "",
+        imageURL: data.imageURL,
+      });
+      if (data.imageURL) {
+        setPreviewImage(data.imageURL);
+      }
+    } catch (error) {
+      console.error("Failed to fetch project:", error);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Updating project with ID:", id);
-    console.log(formData);
+    setIsLoading(true);
+
+    try {
+      const payload = new FormData();
+      payload.append("title", formData.title);
+      payload.append("description", formData.description);
+      payload.append("client", formData.client);
+      payload.append("completionTime", formData.completionTime);
+      payload.append("technologies", formData.technologies);
+      payload.append("demo", formData.demo);
+      payload.append("github", formData.github);
+
+      if (formData.imageURL instanceof File) {
+        payload.append("imageURL", formData.imageURL);
+      }
+
+      const res = await fetch(`/api/project/${id}`, {
+        method: "PUT",
+        body: payload,
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to update project");
+      }
+
+      const data = await res.json();
+      alert("Project updated successfully!");
+
+      await fetchProject();
+    } catch (error) {
+      console.error("Update failed:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        const response = await fetch(`/api/project/${id}`);
-        const data = await response.json();
-        setFormData({
-          title: data.title || "",
-          description: data.description || "",
-          client: data.client || "",
-          completionTime: data.completionTime || "",
-          technologies: data.technologies || "",
-          demo: data.demo || "",
-          github: data.github || "",
-          imageURL: data.imageURL,
-        });
-        if (data.imageURL) {
-          setPreviewImage(data.imageURL);
-        }
-      } catch (error) {
-        console.error("Failed to fetch project:", error);
-      }
-    };
-
     fetchProject();
   }, [id]);
 
@@ -312,6 +345,7 @@ export default function EditProject({
               <button
                 type="submit"
                 className="px-4 py-3 bg-[#85f330] rounded-2 hover:bg-[#62a92b] font-semibold"
+                disabled={isLoading}
               >
                 Update Project
               </button>

@@ -24,10 +24,17 @@ function CreateBlog() {
     blogImageURL: null,
   });
 
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setFormData((prev) => ({ ...prev, imageFile: file }));
+      setFormData((prev) => ({ ...prev, blogImageURL: file }));
       const imageUrl = URL.createObjectURL(file);
       setPreviewImage(imageUrl);
     }
@@ -38,7 +45,7 @@ function CreateBlog() {
   };
 
   const handleRemoveImage = () => {
-    setFormData((prev) => ({ ...prev, imageFile: null }));
+    setFormData((prev) => ({ ...prev, blogImageURL: null }));
     setPreviewImage("");
   };
 
@@ -55,7 +62,11 @@ function CreateBlog() {
           <div className="text-center mb-5">
             <h2 className="text-3xl font-bold">Create New Blog</h2>
           </div>
-          <div className="flex flex-col items-center gap-5">
+
+          <label className="!text-md !text-gray-500 pb-2 pl-1">
+            Upload Heading Image
+          </label>
+          <div className="flex flex-col items-center gap-5 mb-3">
             <input
               type="file"
               id="image_input"
@@ -87,7 +98,58 @@ function CreateBlog() {
               </div>
             )}
           </div>
+          <label className="relative w-full mb-3">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={formData.title}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.title
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    } // if empty, stay normal
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
+              Project Title
+            </span>
+          </label>
+          <label className="!text-md !text-gray-500 py-2 pl-1">
+            Write Blog Description
+          </label>
           <NoSSR editorRef={editorRef} />
+          <label className="relative w-full mt-3">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={formData.blogTags}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.title
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    } // if empty, stay normal
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
+              Blog Tags
+            </span>
+          </label>
           <div className="my-3 flex justify-center">
             <button
               className="px-5 py-3 bg-[#85f330] rounded-2 hover:bg-[#62a92b] font-semibold"

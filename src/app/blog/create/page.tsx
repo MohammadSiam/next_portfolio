@@ -49,9 +49,30 @@ function CreateBlog() {
     setPreviewImage("");
   };
 
-  const handleSubmit = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
+  const handleSubmit = async () => {
+    const description = editorRef.current?.getContent?.();
+
+    const form = new FormData();
+    form.append("title", formData.title);
+    form.append("description", description);
+    form.append("tags", formData.blogTags);
+    if (formData.blogImageURL) {
+      form.append("blogImageURL", formData.blogImageURL);
+    }
+
+    try {
+      const res = await fetch("/api/blog", {
+        method: "POST",
+        body: form,
+      });
+
+      if (!res.ok) throw new Error("Failed to create blog");
+
+      const result = await res.json();
+      console.log("Blog created:", result);
+      // Optionally reset the form or redirect
+    } catch (error) {
+      console.error("Error submitting blog:", error);
     }
   };
 
@@ -70,7 +91,7 @@ function CreateBlog() {
             <input
               type="file"
               id="image_input"
-              name="imageURL"
+              name="blogImageURL"
               className="hidden"
               accept="image/*"
               onChange={handleImageChange}
@@ -129,8 +150,8 @@ function CreateBlog() {
           <label className="relative w-full mt-3">
             <input
               type="text"
-              name="title"
-              id="title"
+              name="blogTags"
+              id="blogTags"
               value={formData.blogTags}
               onChange={handleInputChange}
               placeholder=" "
@@ -152,8 +173,9 @@ function CreateBlog() {
           </label>
           <div className="my-3 flex justify-center">
             <button
-              className="px-5 py-3 bg-[#85f330] rounded-2 hover:bg-[#62a92b] font-semibold"
               onClick={handleSubmit}
+              className="px-5 py-3 bg-[#85f330] rounded-2 hover:bg-[#62a92b] font-semibold"
+              type="submit"
             >
               Submit
             </button>

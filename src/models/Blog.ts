@@ -7,6 +7,7 @@ export interface IBlogTags {
 export interface IBlog extends Document {
   _id: string;
   title: string;
+  subTitle: string;
   description: string;
   blogTags: IBlogTags[];
   blogImageURL: string;
@@ -17,6 +18,7 @@ export interface IBlog extends Document {
 const BlogSchema: Schema = new Schema<IBlog>(
   {
     title: { type: String, required: true },
+    subTitle: { type: String, required: true },
     description: { type: String, required: true },
     blogTags: [
       {

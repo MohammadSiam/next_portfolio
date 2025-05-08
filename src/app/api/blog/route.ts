@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
 
     const title = formData.get("title") as string;
+    const subTitle = formData.get("subTitle") as string;
     const description = formData.get("description") as string;
     const tags = formData.get("tags") as string;
     const image = formData.get("blogImageURL") as unknown as File;
@@ -58,6 +59,7 @@ export async function POST(req: NextRequest) {
 
     const newBlog = await Blog.create({
       title,
+      subTitle,
       description,
       blogTags: tags.split(",").map((tag) => ({ name: tag.trim() })),
       blogImageURL: uploadResult.url,

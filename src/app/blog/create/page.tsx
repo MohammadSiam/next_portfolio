@@ -9,6 +9,7 @@ const NoSSR = dynamic(() => import("@/pages/blog/RichTextEditor"), {
 
 interface BlogFormData {
   title: string;
+  subTitle: string;
   description: string;
   blogTags: string;
   blogImageURL: File | null;
@@ -19,6 +20,7 @@ function CreateBlog() {
   const [previewImage, setPreviewImage] = useState<string>("");
   const [formData, setFormData] = useState<BlogFormData>({
     title: "",
+    subTitle: "",
     description: "",
     blogTags: "",
     blogImageURL: null,
@@ -54,6 +56,7 @@ function CreateBlog() {
 
     const form = new FormData();
     form.append("title", formData.title);
+    form.append("subTitle", formData.subTitle);
     form.append("description", description);
     form.append("tags", formData.blogTags);
     if (formData.blogImageURL) {
@@ -69,7 +72,6 @@ function CreateBlog() {
       if (!res.ok) throw new Error("Failed to create blog");
 
       const result = await res.json();
-      console.log("Blog created:", result);
       // Optionally reset the form or redirect
     } catch (error) {
       console.error("Error submitting blog:", error);
@@ -140,7 +142,31 @@ function CreateBlog() {
     peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
   `}
             >
-              Project Title
+              Blog Title
+            </span>
+          </label>
+          <label className="relative w-full mb-3">
+            <input
+              type="text"
+              name="subTitle"
+              id="subTitle"
+              value={formData.subTitle}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
+    absolute left-5 text-[#777777] transition-all duration-300
+    ${
+      formData.subTitle
+        ? "-top-3 left-2 scale-[0.9] text-primary bg-white px-1"
+        : "top-3.5 left-5 scale-100"
+    } // if empty, stay normal
+    peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
+  `}
+            >
+              Blog Sub Title
             </span>
           </label>
           <label className="!text-md !text-gray-500 py-2 pl-1">

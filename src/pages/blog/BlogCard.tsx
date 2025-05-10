@@ -1,11 +1,20 @@
+"use client";
 import { IBlog } from "@/models/Blog";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FaRegCalendarAlt, FaRegCommentDots } from "react-icons/fa";
 
 function BlogCard({ blog }: { blog: IBlog }) {
+  const router = useRouter();
+  const handleDetails = () => {
+    router.push(`/blog/details/${blog._id}`);
+  };
   return (
     <div>
-      <div className="flex flex-col md:flex-row-reverse justify-between gap-4 p-4 cursor-pointer rounded-lg shadow hover:shadow-md transition-all bg-white">
+      <div
+        className="flex flex-col md:flex-row-reverse justify-between gap-4 p-4 cursor-pointer rounded-lg shadow hover:shadow-md transition-all bg-white"
+        onClick={handleDetails}
+      >
         <div className="w-32 h-20 relative rounded-md overflow-hidden">
           <Image
             src={blog?.blogImageURL}
@@ -25,7 +34,7 @@ function BlogCard({ blog }: { blog: IBlog }) {
               <span>{new Date(blog?.createdAt).toLocaleDateString()}</span>
             </div>
 
-            <div className="flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1">
               <FaRegCommentDots className="w-4 h-4" />
               <span>
                 {blog?.blogTags?.map((tag, index) => (

@@ -32,4 +32,4 @@ const BlogSchema: Schema = new Schema<IBlog>(
   }
 );
 
-export const Blog = models.BlogSchema || model<IBlog>("Blog", BlogSchema);
+export const Blog = models.Blog || model<IBlog>("Blog", BlogSchema);

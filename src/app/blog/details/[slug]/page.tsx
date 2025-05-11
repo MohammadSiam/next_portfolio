@@ -26,13 +26,15 @@ function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
         </h1>
         <p className="text-xl text-gray-600">{blog?.subTitle}</p>
 
-        <Image
-          src={blog?.blogImageURL || "/placeholder.jpg"}
-          alt={blog?.title || ""}
-          width={800}
-          height={400}
-          className="rounded-lg shadow-sm mb-6 m-auto py-6"
-        />
+        {blog?.blogImageURL && (
+          <Image
+            src={blog?.blogImageURL || "/placeholder.jpg"}
+            alt={blog?.title || ""}
+            width={800}
+            height={400}
+            className="rounded-lg shadow-sm mb-6 m-auto py-6"
+          />
+        )}
 
         <article
           dangerouslySetInnerHTML={{ __html: blog?.description || "" }}

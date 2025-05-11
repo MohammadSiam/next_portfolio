@@ -1,6 +1,12 @@
 import { Editor } from "@tinymce/tinymce-react";
+import { useEffect } from "react";
 
-function RichTextEditor({ editorRef }: any) {
+function RichTextEditor({ editorRef, initialValue }: any) {
+  useEffect(() => {
+    if (editorRef.current) {
+      editorRef.current.setContent(initialValue || ""); // Set the initial value in the editor
+    }
+  }, [editorRef, initialValue]);
   return (
     <div>
       <Editor

@@ -12,6 +12,7 @@ function RichTextEditor({ editorRef, initialValue }: any) {
       <Editor
         apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
         onInit={(_evt, editor) => (editorRef.current = editor)}
+        initialValue={initialValue}
         init={{
           height: 500,
           menubar: false,

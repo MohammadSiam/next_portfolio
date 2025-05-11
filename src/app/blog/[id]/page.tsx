@@ -3,7 +3,9 @@ import dynamic from "next/dynamic";
 import { ChangeEvent, use, useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
-const NoSSR = dynamic(() => import("@/pages/blog/RichTextEditor"));
+const NoSSR = dynamic(() => import("@/pages/blog/RichTextEditor"), {
+  ssr: false,
+});
 
 interface BlogFormData {
   title: string;

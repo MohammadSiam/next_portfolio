@@ -11,7 +11,7 @@ interface BlogFormData {
   title: string;
   subTitle: string;
   description: string;
-  blogTags: string;
+  blogTags: [];
   blogImageURL: File | string;
 }
 
@@ -24,7 +24,7 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     title: "",
     subTitle: "",
     description: "",
-    blogTags: "",
+    blogTags: [],
     blogImageURL: "",
   });
   const handleInputChange = (
@@ -90,7 +90,7 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     form.append("title", formData.title);
     form.append("subTitle", formData.subTitle);
     form.append("description", description);
-    form.append("tags", formData.blogTags);
+    form.append("tags", JSON.stringify(formData.blogTags));
     if (formData.blogImageURL) {
       form.append("blogImageURL", formData.blogImageURL);
     }
@@ -119,8 +119,9 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
   return (
     <section className="pt-[130px] pb-3">
       <div className="container">
-        <div className="p-6">
-          <h1 className="text-3xl font-bold mb-6 text-center">Edit Blog</h1>
+        <div className="px-6 text-center">
+          <h1 className="text-3xl font-bold">Edit Blog</h1>
+          <p>{formData.subTitle}</p>
         </div>
         <label className="!text-md !text-gray-500 pb-2 pl-1">
           Update Heading Image
@@ -218,9 +219,9 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
             type="text"
             name="blogTags"
             id="blogTags"
-            value={formData.blogTags}
+            value={formData.blogTags.map((tag: any) => tag.name).join(", ")} // Convert array of objects to a comma-separated string
             onChange={handleInputChange}
-            placeholder=" "
+            placeholder="Enter tags separated by commas"
             className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
           />
           <span

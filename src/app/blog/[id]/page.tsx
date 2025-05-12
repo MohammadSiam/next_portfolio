@@ -11,7 +11,7 @@ interface BlogFormData {
   title: string;
   subTitle: string;
   description: string;
-  blogTags: [];
+  blogTags: string;
   blogImageURL: File | string;
 }
 
@@ -24,7 +24,7 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     title: "",
     subTitle: "",
     description: "",
-    blogTags: [],
+    blogTags: "",
     blogImageURL: "",
   });
   const handleInputChange = (
@@ -38,7 +38,7 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     if (file) {
       setFormData((prev) => ({
         ...prev,
-        imageURL: file || "",
+        blogImageURL: file || "",
       }));
 
       // Generate a preview of the image
@@ -71,7 +71,7 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
         title: data.title || "",
         subTitle: data.subTitle || "",
         description: data.description || "",
-        blogTags: data.blogTags || [],
+        blogTags: data.blogTags.map((tag: any) => tag.name).join(", ") || "",
         blogImageURL: data.blogImageURL,
       });
       if (data.blogImageURL) {
@@ -90,10 +90,12 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     form.append("title", formData.title);
     form.append("subTitle", formData.subTitle);
     form.append("description", description);
-    form.append("tags", JSON.stringify(formData.blogTags));
+    form.append("tags", formData.blogTags);
     if (formData.blogImageURL) {
       form.append("blogImageURL", formData.blogImageURL);
     }
+
+    console.log(form, "values");
 
     try {
       const res = await fetch(`/api/blog/${id}`, {
@@ -123,54 +125,55 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
           <h1 className="text-3xl font-bold">Edit Blog</h1>
           <p>{formData.subTitle}</p>
         </div>
-        <label className="!text-md !text-gray-500 pb-2 pl-1">
-          Update Heading Image
-        </label>
-        <div className="flex flex-col items-center gap-5 mb-3">
-          <input
-            type="file"
-            id="image_input"
-            name="blogImageURL"
-            className="hidden"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
+        <form onSubmit={handleSubmit}>
+          <label className="!text-md !text-gray-500 pb-2 pl-1">
+            Update Heading Image
+          </label>
+          <div className="flex flex-col items-center gap-5 mb-3">
+            <input
+              type="file"
+              id="image_input"
+              name="blogImageURL"
+              className="hidden"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
 
-          {previewImage === "" ? (
-            <div
-              className="w-full flex flex-col items-center justify-center gap-4 border border-dashed border-gray-300 rounded-md py-8 cursor-pointer"
-              onClick={handleImageUploadClick}
-            >
-              <FiUpload className="text-3xl text-gray-400" />
-              <p className="text-gray-400">Browse to upload your image</p>
-            </div>
-          ) : (
-            <div className="relative w-full h-auto">
-              <img
-                src={previewImage}
-                alt="Preview"
-                className="w-full h-full object-cover rounded-md"
-              />
-              <MdDelete
-                className="absolute top-2 right-2 text-3xl text-red-600 bg-white rounded-full p-1 cursor-pointer"
-                onClick={handleRemoveImage}
-              />
-            </div>
-          )}
-        </div>
+            {previewImage === "" ? (
+              <div
+                className="w-full flex flex-col items-center justify-center gap-4 border border-dashed border-gray-300 rounded-md py-8 cursor-pointer"
+                onClick={handleImageUploadClick}
+              >
+                <FiUpload className="text-3xl text-gray-400" />
+                <p className="text-gray-400">Browse to upload your image</p>
+              </div>
+            ) : (
+              <div className="relative w-full h-auto">
+                <img
+                  src={previewImage}
+                  alt="Preview"
+                  className="w-full h-full object-cover rounded-md"
+                />
+                <MdDelete
+                  className="absolute top-2 right-2 text-3xl text-red-600 bg-white rounded-full p-1 cursor-pointer"
+                  onClick={handleRemoveImage}
+                />
+              </div>
+            )}
+          </div>
 
-        <label className="relative w-full mb-3">
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={formData.title}
-            onChange={handleInputChange}
-            placeholder=" "
-            className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
-          />
-          <span
-            className={`
+          <label className="relative w-full mb-3">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={formData.title}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
     absolute left-5 text-[#777777] transition-all duration-300
     ${
       formData.title
@@ -179,23 +182,23 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     } // if empty, stay normal
     peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
   `}
-          >
-            Blog Title
-          </span>
-        </label>
+            >
+              Blog Title
+            </span>
+          </label>
 
-        <label className="relative w-full mb-3">
-          <input
-            type="text"
-            name="subTitle"
-            id="subTitle"
-            value={formData.subTitle}
-            onChange={handleInputChange}
-            placeholder=" "
-            className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
-          />
-          <span
-            className={`
+          <label className="relative w-full mb-3">
+            <input
+              type="text"
+              name="subTitle"
+              id="subTitle"
+              value={formData.subTitle}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
     absolute left-5 text-[#777777] transition-all duration-300
     ${
       formData.subTitle
@@ -204,28 +207,28 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     } // if empty, stay normal
     peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
   `}
-          >
-            Blog Sub Title
-          </span>
-        </label>
+            >
+              Blog Sub Title
+            </span>
+          </label>
 
-        <label className="!text-md !text-gray-500 py-2 pl-1">
-          Write Blog Description
-        </label>
-        <NoSSR editorRef={editorRef} initialValue={formData?.description} />
+          <label className="!text-md !text-gray-500 py-2 pl-1">
+            Write Blog Description
+          </label>
+          <NoSSR editorRef={editorRef} initialValue={formData?.description} />
 
-        <label className="relative w-full mt-3">
-          <input
-            type="text"
-            name="blogTags"
-            id="blogTags"
-            value={formData.blogTags.map((tag: any) => tag.name).join(", ")} // Convert array of objects to a comma-separated string
-            onChange={handleInputChange}
-            placeholder="Enter tags separated by commas"
-            className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
-          />
-          <span
-            className={`
+          <label className="relative w-full mt-3">
+            <input
+              type="text"
+              name="blogTags"
+              id="blogTags"
+              value={formData.blogTags}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="peer border-border bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+            />
+            <span
+              className={`
     absolute left-5 text-[#777777] transition-all duration-300
     ${
       formData.title
@@ -234,10 +237,21 @@ function UpdateBlogPage({ params }: { params: Promise<{ id: string }> }) {
     } // if empty, stay normal
     peer-focus:-top-3 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary peer-focus:px-1
   `}
-          >
-            Blog Tags
-          </span>
-        </label>
+            >
+              Blog Tags
+            </span>
+          </label>
+
+          <div className="flex justify-center mt-4">
+            <button
+              type="submit"
+              className="px-4 py-3 bg-[#85f330] rounded-2 hover:bg-[#62a92b] font-semibold"
+              disabled={isLoading}
+            >
+              Update Blog
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );

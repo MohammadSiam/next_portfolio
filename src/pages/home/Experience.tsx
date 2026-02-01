@@ -29,7 +29,7 @@ export default function Experience() {
                   </span>
                 </div>
                 <h3>
-                  +2
+                  +3
                   <span className="text-300">years of </span>
                   passion
                   <span className="text-300">

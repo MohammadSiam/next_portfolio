@@ -1,0 +1,67 @@
+services:
+  # =========================
+  # PROD APP
+  # =========================
+  app-prod:
+    image: next-portfolio:${PROD_TAG:-prod-latest}
+    container_name: next-portfolio-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_ROOT_API_URL=${NEXT_PUBLIC_ROOT_API_URL}
+        - NEXT_PUBLIC_TINYMCE_API_KEY=${NEXT_PUBLIC_TINYMCE_API_KEY}
+    env_file:
+      - .env.production
+    ports:
+      - "5003:3000"
+    depends_on:
+      - mongodb-prod
+    networks:
+      - prod-net
+    profiles:
+      - prod
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # =========================
+  # PROD MONGODB
+  # =========================
+  mongodb-prod:
+    image: mongo:8.0
+    container_name: next-portfolio-mongodb-prod
+    env_file:
+      - .env.production
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${DB_NAME:-portfolio}
+    volumes:
+      - mongodb-prod-data:/data/db
+      - mongodb-prod-config:/data/configdb
+    ports:
+      - "27017:27017"
+    networks:
+      - prod-net
+    profiles:
+      - prod
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  mongodb-prod-data:
+  mongodb-prod-config:
+
+networks:
+  prod-net:
+    driver: bridge

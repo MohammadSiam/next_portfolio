@@ -18,7 +18,12 @@ export async function connectDB() {
     });
   }
 
-  cached.conn = await cached.promise;
-  console.log("✅ MongoDB connected:", cached.conn.connection.name);
-  return cached.conn;
+  try {
+    cached.conn = await cached.promise;
+    console.log("✅ MongoDB connected:", cached.conn.connection.name);
+    return cached.conn;
+  } catch (error) {
+    cached.promise = null;
+    throw error;
+  }
 }

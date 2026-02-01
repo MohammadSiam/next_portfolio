@@ -17,7 +17,7 @@ export default function Header({
       <header>
         <div className="container relative">
           <div className="relative">
-            <nav className="navbar navbar-expand-lg navbar-home-2 h-[80px] flex-nowrap z-999 p-0 border border-1 rounded-3">
+            <nav className="navbar navbar-expand-lg navbar-home-2 h-[80px] flex-nowrap z-999 p-0 border rounded-3">
               <a
                 className="navbar-menu p-4 text-center square-100 menu-tigger icon_80 icon-shape d-none d-md-flex"
                 data-bs-target=".offCanvas__info"
@@ -36,7 +36,7 @@ export default function Header({
                 </Link>
                 <div className="d-none d-lg-flex">
                   <div className="" id="navbarSupportedContent">
-                    <ul className="flex gap-3 items-center font-semibold dark:text-gray-300 me-auto mb-2 mb-lg-0">
+                    <ul className="flex gap-3 items-center font-semibold me-auto mb-2 mb-lg-0">
                       <li className="nav-item">
                         <Link className="nav-link" href="/#resume">
                           Resume

@@ -22,13 +22,18 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Accept build-time environment variables (NEXT_PUBLIC_* variables must be available at build time)
-ARG NEXT_PUBLIC_ROOT_API_URL
-ARG NEXT_PUBLIC_TINYMCE_API_KEY
+ARG NEXT_PUBLIC_ROOT_API_URL=""
+ARG NEXT_PUBLIC_TINYMCE_API_KEY=""
+ARG MONGODB_URI="mongodb://dummy:dummy@localhost:27017/dummy"
+ARG DB_NAME="portfolio"
 
 # Set environment variables for build
 ENV NEXT_PUBLIC_ROOT_API_URL=$NEXT_PUBLIC_ROOT_API_URL
 ENV NEXT_PUBLIC_TINYMCE_API_KEY=$NEXT_PUBLIC_TINYMCE_API_KEY
+ENV MONGODB_URI=$MONGODB_URI
+ENV DB_NAME=$DB_NAME
 
+# Build the application
 RUN npm run build
 
 # ==========================================

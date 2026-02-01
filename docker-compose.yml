@@ -14,7 +14,7 @@ services:
     env_file:
       - .env.production
     ports:
-      - "5003:3000"
+      - "3004:3000"
     depends_on:
       - mongodb-prod
     networks:

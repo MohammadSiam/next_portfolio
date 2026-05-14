@@ -52,8 +52,9 @@ export default function Experience() {
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">Bluebay IT Ltd.</h5>
-                            <span className="text-300">Oct 24 - Present</span>
+                            <h5 className="mb-0">Bluebay IT Ltd.</h5>
+                            <span className="text-primary-2" style={{ fontSize: "0.75rem" }}>Senior Software Engineer</span>
+                            <span className="text-300" style={{ fontSize: "0.75rem" }}>Oct 24 - Present</span>
                           </div>
                         </div>
                       </Link>
@@ -69,10 +70,11 @@ export default function Experience() {
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">
+                            <h5 className="mb-0">
                               Akij Food And Beverage Ltd.
                             </h5>
-                            <span className="text-300">Feb 24 - Oct 24</span>
+                            <span className="text-primary-2" style={{ fontSize: "0.75rem" }}>Software Engineer</span>
+                            <span className="text-300" style={{ fontSize: "0.75rem" }}>Feb 24 - Oct 24</span>
                           </div>
                         </div>
                       </Link>
@@ -88,57 +90,53 @@ export default function Experience() {
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-1">BracNet Ltd.</h5>
-                            <span className="text-300">Oct 23 - Dec 23</span>
+                            <h5 className="mb-0">BracNet Ltd.</h5>
+                            <span className="text-primary-2" style={{ fontSize: "0.75rem" }}>Intern</span>
+                            <span className="text-300" style={{ fontSize: "0.75rem" }}>Oct 23 - Dec 23</span>
                           </div>
                         </div>
                       </Link>
                     </div>
                   </div>
                   <div className="col-lg-8 ps-lg-5 mt-5 mt-lg-0">
-                    <h6 className="text-linear-4">Software Engineer</h6>
+                    <h6 className="text-linear-4">Senior Software Engineer — Bluebay IT Ltd. (UAPP)</h6>
                     <ul className="mt-4">
                       <li className="text-dark mb-3">
-                        Led development of scalable web applications,{" "}
+                        Design and implement user interfaces for{" "}
                         <span className="text-secondary-2">
-                          improving performance
+                          Student, Consultant, Companion, and System Admin
                         </span>{" "}
-                        and user experience for millions of users.
+                        modules using React.js, Next.js, and TypeScript.
                       </li>
                       <li className="text-dark mb-3">
-                        Design and implement user interfaces using React.js,
-                        Next.js, and TypeScript.
+                        Utilize{" "}
+                        <span className="text-secondary-2">Zustand</span> and
+                        Context API for efficient state management, and{" "}
+                        <span className="text-secondary-2">Radix UI</span> with
+                        Tailwind CSS for custom component interactions.
                       </li>
                       <li className="text-dark mb-3">
-                        Collaborated with cross-functional teams to integrate
-                        new features seamlessly.
+                        Integrate APIs for real-time student management and
+                        consultation data; collaborate with cross-functional
+                        teams to ensure smooth frontend-backend performance.
+                      </li>
+                      <li className="text-dark mb-3">
+                        At{" "}
+                        <span className="text-secondary-2">Akij Food & Beverage</span>
+                        : built backend systems with NestJS &amp; TypeScript,
+                        managed MySQL databases with TypeORM, and implemented
+                        role-based access control.
                       </li>
                     </ul>
                     <div className="d-flex flex-wrap align-items-center gap-3 mt-7">
-                      <Link
-                        href="#"
-                        className="text-300 border border-1 px-3 py-1"
-                      >
-                        Reactjs
-                      </Link>
-                      <Link
-                        href="#"
-                        className="text-300 border border-1 px-3 py-1"
-                      >
-                        Nextjs
-                      </Link>
-                      <Link
-                        href="#"
-                        className="text-300 border border-1 px-3 py-1"
-                      >
-                        Nodejs
-                      </Link>
-                      <Link
-                        href="#"
-                        className="text-300 border border-1 px-3 py-1"
-                      >
-                        Nestjs
-                      </Link>
+                      {["React.js", "Next.js", "TypeScript", "NestJS", "Zustand", "Tailwind", "TypeORM", "MySQL"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-300 border border-1 px-3 py-1"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

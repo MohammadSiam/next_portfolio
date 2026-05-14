@@ -119,7 +119,7 @@ export default function Education() {
                     <li className="position-relative z-1 mb-3">
                       <div className="d-flex gap-2">
                         <p className="text-300 text-nowrap fw-regular mb-0">
-                          2021-2013:
+                          2021-2023:
                         </p>
                         <div>
                           <span className="text-primary-2">

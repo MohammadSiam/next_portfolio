@@ -1,4 +1,3 @@
-import Blog from "@/pages/home/Blogs";
 import Contact from "@/pages/home/Contact";
 import Education from "@/pages/home/Education";
 import Experience from "@/pages/home/Experience";
@@ -13,12 +12,11 @@ export default function Home() {
     <>
       <Hero />
       <Statics />
-      <Service />
       <Experience />
-      <Education />
       <Projects />
       <Skills />
-      {/* <Blog /> */}
+      <Service />
+      <Education />
       <Contact />
     </>
   );

@@ -169,10 +169,20 @@ export default function Skills() {
                               <li className="mb-3">
                                 <div className="d-flex flex-column flex-md-row gap-2">
                                   <p className="text-dark text-nowrap mb-0">
-                                    Front-End:
+                                    Web Technologies:
                                   </p>
                                   <span className="text-300">
-                                    HTML, CSS, JavaScript, React,Nextjs
+                                    HTML, CSS, SCSS, Bootstrap, Antd, Tailwind, Shadcn
+                                  </span>
+                                </div>
+                              </li>
+                              <li className="mb-3">
+                                <div className="d-flex flex-column flex-md-row gap-2">
+                                  <p className="text-dark text-nowrap mb-0">
+                                    Frontend:
+                                  </p>
+                                  <span className="text-300">
+                                    React.js, Next.js, Zustand, Redux, Authjs, Zod, YUP, Radix UI, React Native (Basic)
                                   </span>
                                 </div>
                               </li>
@@ -182,7 +192,7 @@ export default function Skills() {
                                     Back-End:
                                   </p>
                                   <span className="text-300">
-                                    Node.js, Express, Nestjs
+                                    Node.js, Express.js, NestJS, TypeORM, Sequelize, Jest, Joi
                                   </span>
                                 </div>
                               </li>
@@ -199,18 +209,18 @@ export default function Skills() {
                               <li className="mb-3">
                                 <div className="d-flex flex-column flex-md-row gap-2">
                                   <p className="text-dark text-nowrap mb-0">
-                                    Tools &amp; Platforms:
+                                    Tools &amp; Infra:
                                   </p>
-                                  <span className="text-300">Git, Docker</span>
+                                  <span className="text-300">GitHub, npm, Figma, Docker, Azure, Nginx</span>
                                 </div>
                               </li>
                               <li className="mb-3">
                                 <div className="d-flex flex-column flex-md-row gap-2">
                                   <p className="text-dark text-nowrap mb-0">
-                                    Others:
+                                    Architecture:
                                   </p>
                                   <span className="text-300">
-                                    RESTful APIs, GraphQL, Agile Methodologies
+                                    RESTful API, Microservices, Monolithic, API Gateway, Load Balancing
                                   </span>
                                 </div>
                               </li>

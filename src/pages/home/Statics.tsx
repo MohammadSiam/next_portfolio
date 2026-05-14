@@ -32,43 +32,43 @@ export default function Statics() {
                         <CountUp
                           className="odometer text-dark fw-medium"
                           enableScrollSpy={true}
-                          end={50}
+                          end={8}
                         />
                         <span className="fs-50 text-300 mb-0">+</span>
                       </h2>
-                      <p className="fs-6 mb-0 text-dark">Projects Completed</p>
+                      <p className="fs-6 mb-0 text-dark">Projects Delivered</p>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-auto col-md-6 text-center text-lg-start">
                   <div className="counter-item-cover counter-item">
                     <div className="content mx-auto">
-                      <i className="ri-service-line text-primary-2" />
+                      <i className="ri-building-line text-primary-2" />
                       <h2 className="text-300 my-0 fs-50">
                         <CountUp
                           className="odometer text-dark fw-medium"
                           enableScrollSpy={true}
-                          end={80}
+                          end={3}
                         />
-                        <span className="fs-50 text-300 mb-0">+</span>
+                        <span className="fs-50 text-300 mb-0"></span>
                       </h2>
-                      <p className="fs-6 mb-0 text-dark">Satisfied Clients</p>
+                      <p className="fs-6 mb-0 text-dark">Companies Worked</p>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-auto col-md-6 text-center text-lg-start">
                   <div className="counter-item-cover counter-item">
                     <div className="content mx-auto">
-                      <i className="ri-award-line text-primary-2" />
+                      <i className="ri-code-s-slash-line text-primary-2" />
                       <h2 className="text-300 my-0 fs-50">
                         <CountUp
                           className="odometer text-dark fw-medium"
                           enableScrollSpy={true}
-                          end={10}
+                          end={20}
                         />
                         <span className="fs-50 text-300 mb-0">+</span>
                       </h2>
-                      <p className="fs-6 mb-0 text-dark">Awards Winner</p>
+                      <p className="fs-6 mb-0 text-dark">Technologies</p>
                     </div>
                   </div>
                 </div>

@@ -36,24 +36,30 @@ export default function Hero() {
                       </div>
                       &lt;/span&gt;
                     </div>
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      <span className="badge rounded-pill px-3 py-1 fw-medium" style={{ background: "rgba(168,255,83,0.15)", color: "#A8FF53", border: "1px solid rgba(168,255,83,0.3)", fontSize: "0.75rem" }}>
+                        <span className="me-1" style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#A8FF53", animation: "pulse 2s infinite" }} />
+                        Currently at UAPP
+                      </span>
+                    </div>
                     <h1 className="fs-50 my-3">
                       <span className="text-linear-4">
-                        {"{"}Full Stack{"}"}
+                        {"{"}Senior{"}"}
                       </span>
-                      Web &amp; App developer<span className="flicker">_</span>
+                      Software Engineer<span className="flicker">_</span>
                     </h1>
                     <p className="mb-6 text-secondary-2">
                       &lt;p&gt;
                       <span className="text-dark">
-                        With expertise in cutting-edge technologies such as
+                        Full Stack Developer with hands-on experience in
                       </span>{" "}
-                      <span className="text-secondary-2">NodeJS</span>,{" "}
-                      <span className="text-secondary-2">React</span>,{" "}
-                      <span className="text-secondary-2">Nextjs</span>, and{" "}
-                      <span className="text-secondary-2">Nestjs</span>
+                      <span className="text-secondary-2">React.js</span>,{" "}
+                      <span className="text-secondary-2">Next.js</span>,{" "}
+                      <span className="text-secondary-2">NestJS</span>, and{" "}
+                      <span className="text-secondary-2">TypeScript</span>
                       <span className="text-dark">
-                        ... I deliver web solutions that are both innovative and
-                        robust.
+                        . Building scalable web applications and robust backend
+                        systems across microservices and monolithic architectures.
                       </span>
                       &lt;/p&gt;
                     </p>

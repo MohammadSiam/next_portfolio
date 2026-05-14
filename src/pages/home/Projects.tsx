@@ -1,8 +1,7 @@
 "use client";
-import { IProject } from "@/models/Project";
+import { projects } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -25,24 +24,6 @@ const swiperOptions = {
 };
 
 export default function Projects() {
-  const [projects, setProjects] = useState<IProject[]>([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/project");
-        const result = await response.json();
-        setProjects(result);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
 
   return (
     <>
@@ -67,12 +48,7 @@ export default function Projects() {
                 </div>
                 <h3>My Recent Works</h3>
                 <div className="position-relative">
-                  {loading ? (
-                    <div className="w-full mx-auto bg-secondary p-4 rounded-md border border-[e5eaf2] boxShadow animate-pulse">
-                      <p className="w-[90%] min-h-[300px] bg-[e5eaf2] rounded-md"></p>
-                    </div>
-                  ) : (
-                    <>
+                  <>
                       <Swiper
                         {...swiperOptions}
                         className="swiper slider-two pb-3 position-relative"
@@ -83,13 +59,20 @@ export default function Projects() {
                               <div className="p-lg-5 p-md-4 p-3 border border-1 mt-5 bg-3">
                                 <div className="row">
                                   <div className="col-lg-5">
-                                    <Image
-                                      className="h-[412px] object-cover"
-                                      src={project.imageURL}
-                                      alt={project.title}
-                                      width={500}
-                                      height={600}
-                                    />
+                                    {project.imageURL ? (
+                                      <Image
+                                        className="h-[412px] object-cover"
+                                        src={project.imageURL}
+                                        alt={project.title}
+                                        width={500}
+                                        height={600}
+                                      />
+                                    ) : (
+                                      <div className="h-[412px] d-flex flex-column align-items-center justify-content-center bg-secondary rounded-3 text-center p-4">
+                                        <i className="ri-image-line fs-1 text-300 mb-2" />
+                                        <span className="text-300 fs-6">Screenshot coming soon</span>
+                                      </div>
+                                    )}
                                   </div>
                                   <div className="col-lg-7 ps-lg-5 mt-5 mt-lg-0">
                                     <h4 className="text-linear-4">
@@ -121,13 +104,21 @@ export default function Projects() {
                                         </div>
                                       </li>
                                       <li className="text-dark mb-3 border-bottom pb-3">
-                                        <div className="d-flex justify-content-between">
-                                          <p className="text-dark mb-0 text-end">
+                                        <div className="d-flex justify-content-between align-items-start gap-3">
+                                          <p className="text-dark mb-0 text-nowrap">
                                             Technologies
                                           </p>
-                                          <p className="text-300 mb-0 text-end">
-                                            {project.technologies}
-                                          </p>
+                                          <div className="d-flex flex-wrap gap-1 justify-content-end">
+                                            {project.technologies.split(",").map((tech) => (
+                                              <span
+                                                key={tech.trim()}
+                                                className="px-2 py-0 rounded-1 text-300"
+                                                style={{ fontSize: "0.72rem", border: "1px solid rgba(168,255,83,0.3)", color: "#A8FF53", background: "rgba(168,255,83,0.08)" }}
+                                              >
+                                                {tech.trim()}
+                                              </span>
+                                            ))}
+                                          </div>
                                         </div>
                                       </li>
                                     </ul>
@@ -212,8 +203,7 @@ export default function Projects() {
                           </svg>
                         </div>
                       </div>
-                    </>
-                  )}
+                  </>
                 </div>
               </div>
               <img

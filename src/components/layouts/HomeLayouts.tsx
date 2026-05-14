@@ -1,6 +1,6 @@
 "use client";
-import Footer from "@/pages/home/Footer";
-import Header from "@/pages/home/Header";
+import Footer from "@/sections/home/Footer";
+import Header from "@/sections/home/Header";
 import { useEffect, useState } from "react";
 import BackToTop from "../elements/BackToTop";
 

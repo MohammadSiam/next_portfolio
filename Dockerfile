@@ -24,7 +24,7 @@ COPY . .
 # Accept build-time environment variables (NEXT_PUBLIC_* variables must be available at build time)
 ARG NEXT_PUBLIC_ROOT_API_URL=""
 ARG NEXT_PUBLIC_TINYMCE_API_KEY=""
-ARG NEXT_PUBLIC_WEB3FORMS_KEY=""
+ARG NEXT_PUBLIC_WEB3FORMS_KEY="fade08e6-27f8-46a3-9ee9-c7654e5580d9"
 ARG MONGODB_URI="mongodb://dummy:dummy@localhost:27017/dummy"
 ARG DB_NAME="portfolio"
 

@@ -16,7 +16,8 @@ export default function Contact() {
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
     };
 
     try {
@@ -24,7 +25,7 @@ export default function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          access_key: "fade08e6-27f8-46a3-9ee9-c7654e5580d9",
           ...data,
         }),
       });
@@ -123,7 +124,8 @@ export default function Contact() {
                         )}
                         {status === "error" && (
                           <p className="text-danger mt-2 mb-0">
-                            Failed to send. Please email directly at siamk417@gmail.com
+                            Failed to send. Please email directly at
+                            siamk417@gmail.com
                           </p>
                         )}
                       </div>

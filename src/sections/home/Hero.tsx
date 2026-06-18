@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import siam from "../../../public/siam2.png";
+import siam from "../../../public/Mohammad_Siam.png";
 
 export default function Hero() {
   return (

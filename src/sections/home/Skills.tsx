@@ -169,6 +169,16 @@ export default function Skills() {
                               <li className="mb-3">
                                 <div className="d-flex flex-column flex-md-row gap-2">
                                   <p className="text-dark text-nowrap mb-0">
+                                    Languages:
+                                  </p>
+                                  <span className="text-300">
+                                    JavaScript, TypeScript, Go, Dart, C, C++, Python
+                                  </span>
+                                </div>
+                              </li>
+                              <li className="mb-3">
+                                <div className="d-flex flex-column flex-md-row gap-2">
+                                  <p className="text-dark text-nowrap mb-0">
                                     Web Technologies:
                                   </p>
                                   <span className="text-300">

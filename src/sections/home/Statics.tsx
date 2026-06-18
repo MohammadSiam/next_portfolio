@@ -16,7 +16,7 @@ export default function Statics() {
                         <CountUp
                           className="odometer text-dark fw-medium"
                           enableScrollSpy={true}
-                          end={2}
+                          end={3}
                         />
                         <span className="fs-50 text-300 mb-0">+</span>
                       </h2>

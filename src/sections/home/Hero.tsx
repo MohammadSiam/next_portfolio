@@ -41,6 +41,9 @@ export default function Hero() {
                         <span className="me-1" style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#A8FF53", animation: "pulse 2s infinite" }} />
                         Currently at UAPP
                       </span>
+                      <span className="badge rounded-pill px-3 py-1 fw-medium" style={{ background: "rgba(99,99,102,0.15)", color: "#a0a0a5", border: "1px solid rgba(99,99,102,0.3)", fontSize: "0.75rem" }}>
+                        Founder @ StackLeo
+                      </span>
                     </div>
                     <h1 className="fs-50 my-3">
                       <span className="text-linear-4">

@@ -16,8 +16,8 @@ export const projects: IProject[] = [
     _id: "pro_pos",
     title: "Lenden – Point-of-Sale & Inventory Management System",
     description:
-      "Built a full-featured POS and inventory management web application for retail businesses. The system covers purchase management with multi-payment and installment support, sales processing, purchase returns, expense tracking, and supplier/customer management. Includes a product catalog with serial number and warranty tracking, real-time stock monitoring, and a dashboard for business analytics. The frontend is a client-side SPA that communicates with a NestJS REST API backend.",
-    client: "Stackleo",
+      "Built as part of my own company StackLeo — a full-featured POS and inventory management web application for retail businesses. Covers purchase management with multi-payment and installment support, sales processing, purchase returns, expense tracking, and supplier/customer management. Includes a product catalog with serial number and warranty tracking, real-time stock monitoring, and a dashboard for business analytics.",
+    client: "StackLeo (Own Company)",
     completionTime: "Ongoing",
     technologies:
       "React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui, React Hook Form, Zod, Axios, React Router, Redux Toolkit, NestJS",
@@ -53,6 +53,19 @@ export const projects: IProject[] = [
       "http://res.cloudinary.com/dax7o8z1f/image/upload/v1745804001/r1tcc9wy7lrtszlnfv2s.png",
     demo: "https://bankistmanagement.netlify.app/",
     github: "https://github.com/MohammadSiam/bankist_website",
+    status: "active",
+  },
+  {
+    _id: "pro_frevent",
+    title: "Frevent – Event Discovery Platform",
+    description:
+      "A modern event discovery and management web application built with Next.js. Browse, explore, and manage events with a clean and responsive interface.",
+    client: "Personal Project",
+    completionTime: "1 month",
+    technologies: "Next.js, JavaScript, CSS",
+    imageURL: "",
+    demo: "https://frevent.vercel.app",
+    github: "https://github.com/MohammadSiam/frevent",
     status: "active",
   },
   {
@@ -98,13 +111,37 @@ export const projects: IProject[] = [
     status: "active",
   },
   {
+    _id: "pro_store_sales",
+    title: "Store Sales – Point of Sale (POS) System",
+    description:
+      "Developed a comprehensive backend system for a multi-branch POS platform. Manages organization, store, branch, and point-of-sale modules with advanced analytics dashboards to monitor sales performance and operational metrics across locations. Designed secure APIs for real-time data synchronization ensuring accurate reporting.",
+    client: "Akij Food and Beverage Ltd",
+    completionTime: "Ongoing",
+    technologies: "NestJS, TypeScript, MySQL, TypeORM, REST API",
+    imageURL: "",
+    demo: "https://store.neoscoder.com/",
+    github: "",
+    status: "active",
+  },
+  {
+    _id: "pro_cms",
+    title: "Content Management System (CMS)",
+    description:
+      "Built a full-stack CMS covering both frontend and backend. Developed dynamic content management features and multi-user interaction APIs. Used React Hook Form and Zod for robust form validation on the frontend, and NestJS with MySQL on the backend for scalable data handling.",
+    client: "Akij Food and Beverage Ltd",
+    completionTime: "Ongoing",
+    technologies: "Next.js, NestJS, TypeScript, MySQL, Zustand, Radix UI, React Hook Form, Zod",
+    imageURL: "",
+    demo: "https://cmsstage.neoscoder.com/",
+    github: "",
+    status: "active",
+  },
+  {
     _id: "pro_vendzo",
     title: "Vendzo – Multi-Tenant Business Management & POS System",
-
     description:
-      "Built a scalable multi-tenant REST API backend for a full-featured business management platform. Covers purchase management with multi-payment and installment support, sales processing, purchase & sales returns, expense tracking, and supplier/customer management. Includes a product catalog with serial number and warranty tracking, real-time stock monitoring, profit/loss reporting, investment and withdrawal tracking, and role-based access control with granular permission codes. Activity logging with auto-redaction and a separate DB error log are built in globally.",
-
-    client: "Stackleo",
+      "Built as part of my own company StackLeo — a scalable multi-tenant REST API backend for a full-featured business management platform. Covers purchase management with multi-payment and installment support, sales processing, purchase & sales returns, expense tracking, and supplier/customer management. Includes real-time stock monitoring, profit/loss reporting, investment and withdrawal tracking, and role-based access control with granular permission codes. Activity logging with auto-redaction built in globally.",
+    client: "StackLeo (Own Company)",
     completionTime: "Ongoing",
     technologies:
       "NestJS,TypeScript ,TypeORM,MySQL ,JWT,Passport,class-validator,Puppeteer,Swagger,Docker",

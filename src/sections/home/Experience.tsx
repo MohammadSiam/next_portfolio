@@ -52,7 +52,7 @@ export default function Experience() {
                             alt="zelio"
                           />
                           <div className="d-flex flex-column ms-2">
-                            <h5 className="mb-0">Bluebay IT Ltd.</h5>
+                            <h5 className="mb-0">UAPP</h5>
                             <span className="text-primary-2" style={{ fontSize: "0.75rem" }}>Senior Software Engineer</span>
                             <span className="text-300" style={{ fontSize: "0.75rem" }}>Oct 24 - Present</span>
                           </div>
@@ -99,7 +99,7 @@ export default function Experience() {
                     </div>
                   </div>
                   <div className="col-lg-8 ps-lg-5 mt-5 mt-lg-0">
-                    <h6 className="text-linear-4">Senior Software Engineer — Bluebay IT Ltd. (UAPP)</h6>
+                    <h6 className="text-linear-4">Senior Software Engineer — UAPP</h6>
                     <ul className="mt-4">
                       <li className="text-dark mb-3">
                         Design and implement user interfaces for{" "}
